@@ -1,0 +1,211 @@
+[ {
+  "low": 1000,
+  "high": 1999,
+  "region": "ES-VI"
+}, {
+  "low": 2000,
+  "high": 2999,
+  "region": "ES-AB"
+},{
+  "low": 3000,
+  "high": 3999,
+  "region": "ES-A"
+}, {
+  "low": 4000,
+  "high": 4999,
+  "region": "ES-AL"
+}, {
+  "low": 5000,
+  "high": 5999,
+  "region": "ES-AV"
+}, {
+  "low": 6000,
+  "high": 6999,
+  "region": "ES-BA"
+},  {
+  "low": 7000,
+  "high": 7999,
+  "region": "ES-PM"
+},{
+  "low": 8000,
+  "high": 8999,
+  "region": "ES-B"
+},
+ {
+  "low": 9000,
+  "high": 9999,
+  "region": "ES-BU"
+},  {
+  "low": 10000,
+  "high": 10999,
+  "region": "ES-CC"
+}, {
+  "low": 11000,
+  "high": 11999,
+  "region": "ES-CA"
+}, {
+  "low": 12000,
+  "high": 12999,
+  "region": "ES-CS"
+},{
+  "low": 13000,
+  "high": 13999,
+  "region": "ES-CR"
+},  {
+  "low": 14000,
+  "high": 14999,
+  "region": "ES-CO"
+}, {
+  "low": 15000,
+  "high": 15999,
+  "region": "ES-C"
+}, {
+  "low": 16000,
+  "high": 16999,
+  "region": "ES-CU"
+},{
+  "low": 17000,
+  "high": 17999,
+  "region": "ES-GI"
+}, {
+  "low": 18000,
+  "high": 18999,
+  "region": "ES-GR"
+}, {
+  "low": 19000,
+  "high": 19999,
+  "region": "ES-GU"
+},  {
+  "low": 20000,
+  "high": 20999,
+  "region": "ES-SS"
+},{
+  "low": 21000,
+  "high": 21999,
+  "region": "ES-H"
+}, {
+  "low": 22000,
+  "high": 22999,
+  "region": "ES-HU"
+}, {
+  "low": 23000,
+  "high": 23999,
+  "region": "ES-J"
+}, {
+  "low": 24000,
+  "high": 24999,
+  "region": "ES-LE"
+}, {
+  "low": 25000,
+  "high": 25999,
+  "region": "ES-L"
+}, {
+  "low": 26000,
+  "high": 26999,
+  "region": "ES-LO"
+}, {
+  "low": 27000,
+  "high": 27999,
+  "region": "ES-LU"
+}, {
+  "low": 28000,
+  "high": 28999,
+  "region": "ES-M"
+}, {
+  "low": 29000,
+  "high": 29999,
+  "region": "ES-MA"
+}, {
+  "low": 30000,
+  "high": 30009,
+  "region": "ES-MU"
+}, {
+  "low": 31000,
+  "high": 31999,
+  "region": "ES-NA"
+}, {
+  "low": 32000,
+  "high": 32999,
+  "region": "ES-OR"
+}, {
+  "low": 33000,
+  "high": 33999,
+  "region": "ES-O"
+}, {
+  "low": 34000,
+  "high": 34999,
+  "region": "ES-P"
+}, {
+  "low": 35000,
+  "high": 35999,
+  "region": "ES-GC"
+}, 
+ {
+  "low": 36000,
+  "high": 36999,
+  "region": "ES-PO"
+},{
+  "low": 37000,
+  "high": 37999,
+  "region": "ES-SA"
+}, {
+  "low": 38000,
+  "high": 38999,
+  "region": "ES-TF"
+}, {
+  "low": 39000,
+  "high": 39999,
+  "region": "ES-S"
+}, {
+  "low": 40000,
+  "high": 40999,
+  "region": "ES-SG"
+}, {
+  "low": 41000,
+  "high": 41999,
+  "region": "ES-SE"
+}, {
+  "low": 42000,
+  "high": 42999,
+  "region": "ES-SO"
+}, {
+  "low": 43000,
+  "high": 43999,
+  "region": "ES-T"
+}, {
+  "low": 44000,
+  "high": 44999,
+  "region": "ES-TE"
+}, {
+  "low": 45000,
+  "high": 45999,
+  "region": "ES-TO"
+}, {
+  "low": 46000,
+  "high": 46999,
+  "region": "ES-V"
+}, {
+  "low": 47000,
+  "high": 47999,
+  "region": "ES-VA"
+}, {
+  "low": 48000,
+  "high": 48999,
+  "region": "ES-BI"
+}, {
+  "low": 49000,
+  "high": 49999,
+  "region": "ES-ZA"
+}, {
+  "low": 50000,
+  "high": 50999,
+  "region": "ES-Z"
+}, {
+  "low": 51000,
+  "high": 51999,
+  "region": "ES-CE"
+}, {
+  "low": 52000,
+  "high": 52999,
+  "region": "ES-ML"
+}]

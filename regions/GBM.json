@@ -1,0 +1,484 @@
+[{
+	"region": "GB-SCT",
+	"low": "AB",
+	"high": "AB"
+}, {
+	"low": "AL",
+	"high": "AL"
+}, {
+	"region": "GB-ENG",
+	"low": "B",
+	"high": "B"
+}, {
+	"region": "GB-ENG",
+	"low": "BA",
+	"high": "BA"
+}, {
+	"region": "GB-ENG",
+	"low": "BB",
+	"high": "BB"
+}, {
+	"region": "GB-ENG",
+	"low": "BD",
+	"high": "BD"
+}, {
+	"region": "GB-ENG",
+	"low": "BH",
+	"high": "BH"
+}, {
+	"region": "GB-ENG",
+	"low": "BL",
+	"high": "BL"
+}, {
+	"region": "GB-ENG",
+	"low": "BN",
+	"high": "BN"
+}, {
+	"region": "GB-ENG",
+	"low": "BR",
+	"high": "BR"
+}, {
+	"region": "GB-ENG",
+	"low": "BS",
+	"high": "BS"
+}, {
+	"region": "GB-NIR",
+	"low": "BT",
+	"high": "BT"
+}, {
+	"region": "GB-ENG",
+	"low": "CA",
+	"high": "CA"
+}, {
+	"region": "GB-ENG",
+	"low": "CB",
+	"high": "CB"
+}, {
+	"region": "GB-WLS",
+	"low": "CF",
+	"high": "CF"
+}, {
+	"region": "GB-ENG",
+	"low": "CH",
+	"high": "CH"
+}, {
+	"region": "GB-ENG",
+	"low": "CM",
+	"high": "CM"
+}, {
+	"region": "GB-ENG",
+	"low": "CO",
+	"high": "CO"
+}, {
+	"region": "GB-ENG",
+	"low": "CR",
+	"high": "CR"
+}, {
+	"region": "GB-ENG",
+	"low": "CT",
+	"high": "CT"
+}, {
+	"region": "GB-ENG",
+	"low": "CV",
+	"high": "CV"
+}, {
+	"region": "GB-ENG",
+	"low": "CW",
+	"high": "CW"
+}, {
+	"region": "GB-ENG",
+	"low": "DA",
+	"high": "DA"
+}, {
+	"region": "GB-SCT",
+	"low": "DD",
+	"high": "DD"
+}, {
+	"region": "GB-ENG",
+	"low": "DE",
+	"high": "DE"
+}, {
+	"region": "GB-ENG",
+	"low": "DG",
+	"high": "DG"
+}, {
+	"region": "GB-ENG",
+	"low": "DH",
+	"high": "DH"
+}, {
+	"region": "GB-ENG",
+	"low": "DL",
+	"high": "DL"
+}, {
+	"region": "GB-ENG",
+	"low": "DN",
+	"high": "DN"
+}, {
+	"region": "GB-ENG",
+	"low": "DT",
+	"high": "DT"
+}, {
+	"region": "GB-ENG",
+	"low": "DY",
+	"high": "DY"
+}, {
+	"region": "GB-ENG",
+	"low": "E",
+	"high": "E"
+}, {
+	"region": "GB-ENG",
+	"low": "EC",
+	"high": "EC"
+}, {
+	"region": "GB-SCT",
+	"low": "EH",
+	"high": "EH"
+}, {
+	"region": "GB-ENG",
+	"low": "EN",
+	"high": "EN"
+}, {
+	"region": "GB-ENG",
+	"low": "EX",
+	"high": "EX"
+}, {
+	"region": "GB-SCT",
+	"low": "FK",
+	"high": "FK"
+}, {
+	"region": "GB-ENG",
+	"low": "FY",
+	"high": "FY"
+}, {
+	"region": "GB-SCT",
+	"low": "G",
+	"high": "G"
+}, {
+	"region": "GB-ENG",
+	"low": "GL",
+	"high": "GL"
+}, {
+	"region": "GB-ENG",
+	"low": "GU",
+	"high": "GU"
+}, {
+	"region": "GB-ENG",
+	"low": "HA",
+	"high": "HA"
+}, {
+	"region": "GB-ENG",
+	"low": "HD",
+	"high": "HD"
+}, {
+	"region": "GB-ENG",
+	"low": "HG",
+	"high": "HG"
+}, {
+	"region": "GB-ENG",
+	"low": "HP",
+	"high": "HP"
+}, {
+	"region": "GB-ENG",
+	"low": "HR",
+	"high": "HR"
+}, {
+	"region": "GB-SCT",
+	"low": "HS",
+	"high": "HS"
+}, {
+	"region": "GB-ENG",
+	"low": "HU",
+	"high": "HU"
+}, {
+	"region": "GB-ENG",
+	"low": "HX",
+	"high": "HX"
+}, {
+	"region": "GB-ENG",
+	"low": "IG",
+	"high": "IG"
+}, {
+	"region": "GB-ENG",
+	"low": "IP",
+	"high": "IP"
+}, {
+	"region": "GB-SCT",
+	"low": "IV",
+	"high": "IV"
+}, {
+	"region": "GB-SCT",
+	"low": "KA",
+	"high": "KA"
+}, {
+	"region": "GB-ENG",
+	"low": "KT",
+	"high": "KT"
+}, {
+	"region": "GB-SCT",
+	"low": "KW",
+	"high": "KW"
+}, {
+	"region": "GB-SCT",
+	"low": "KY",
+	"high": "KY"
+}, {
+	"region": "GB-ENG",
+	"low": "L",
+	"high": "L"
+}, {
+	"region": "GB-ENG",
+	"low": "LA",
+	"high": "LA"
+}, {
+	"region": "GB-ENG",
+	"low": "LD",
+	"high": "LD"
+}, {
+	"region": "GB-ENG",
+	"low": "LE",
+	"high": "LE"
+}, {
+	"region": "GB-WLS",
+	"low": "LL",
+	"high": "LL"
+}, {
+	"region": "GB-ENG",
+	"low": "LN",
+	"high": "LN"
+}, {
+	"region": "GB-ENG",
+	"low": "LS",
+	"high": "LS"
+}, {
+	"region": "GB-ENG",
+	"low": "LU",
+	"high": "LU"
+}, {
+	"region": "GB-ENG",
+	"low": "M",
+	"high": "M"
+}, {
+	"region": "GB-ENG",
+	"low": "ME",
+	"high": "ME"
+}, {
+	"region": "GB-ENG",
+	"low": "MK",
+	"high": "MK"
+}, {
+	"region": "GB-SCT",
+	"low": "ML",
+	"high": "ML"
+}, {
+	"region": "GB-ENG",
+	"low": "N",
+	"high": "N"
+}, {
+	"region": "GB-ENG",
+	"low": "NE",
+	"high": "NE"
+}, {
+	"region": "GB-ENG",
+	"low": "NG",
+	"high": "NG"
+}, {
+	"region": "GB-ENG",
+	"low": "NN",
+	"high": "NN"
+}, {
+	"region": "GB-ENG",
+	"low": "NP",
+	"high": "NP"
+}, {
+	"region": "GB-ENG",
+	"low": "NR",
+	"high": "NR"
+}, {
+	"region": "GB-ENG",
+	"low": "NW",
+	"high": "NW"
+}, {
+	"region": "GB-ENG",
+	"low": "OL",
+	"high": "OL"
+}, {
+	"region": "GB-ENG",
+	"low": "OX",
+	"high": "OX"
+}, {
+	"region": "GB-SCT",
+	"low": "PA",
+	"high": "PA"
+}, {
+	"region": "GB-ENG",
+	"low": "PE",
+	"high": "PE"
+}, {
+	"region": "GB-SCT",
+	"low": "PH",
+	"high": "PH"
+}, {
+	"region": "GB-ENG",
+	"low": "PL",
+	"high": "PL"
+}, {
+	"region": "GB-ENG",
+	"low": "PO",
+	"high": "PO"
+}, {
+	"region": "GB-ENG",
+	"low": "PR",
+	"high": "PR"
+}, {
+	"region": "GB-ENG",
+	"low": "RG",
+	"high": "RG"
+}, {
+	"region": "GB-ENG",
+	"low": "RH",
+	"high": "RH"
+}, {
+	"region": "GB-ENG",
+	"low": "RM",
+	"high": "RM"
+}, {
+	"region": "GB-ENG",
+	"low": "S",
+	"high": "S"
+}, {
+	"region": "GB-WLS",
+	"low": "SA",
+	"high": "SA"
+}, {
+	"region": "GB-ENG",
+	"low": "SE",
+	"high": "SE"
+}, {
+	"region": "GB-ENG",
+	"low": "SG",
+	"high": "SG"
+}, {
+	"region": "GB-ENG",
+	"low": "SK",
+	"high": "SK"
+}, {
+	"region": "GB-ENG",
+	"low": "SL",
+	"high": "SL"
+}, {
+	"region": "GB-ENG",
+	"low": "SM",
+	"high": "SM"
+}, {
+	"region": "GB-ENG",
+	"low": "SN",
+	"high": "SN"
+}, {
+	"region": "GB-ENG",
+	"low": "SO",
+	"high": "SO"
+}, {
+	"region": "GB-ENG",
+	"low": "SP",
+	"high": "SP"
+}, {
+	"region": "GB-ENG",
+	"low": "SR",
+	"high": "SR"
+}, {
+	"region": "GB-ENG",
+	"low": "SS",
+	"high": "SS"
+}, {
+	"region": "GB-ENG",
+	"low": "ST",
+	"high": "ST"
+}, {
+	"region": "GB-ENG",
+	"low": "SW",
+	"high": "SW"
+}, {
+	"region": "GB-ENG",
+	"low": "SY",
+	"high": "SY"
+}, {
+	"region": "GB-ENG",
+	"low": "TA",
+	"high": "TA"
+}, {
+	"region": "GB-SCT",
+	"low": "TD",
+	"high": "TD"
+}, {
+	"region": "GB-ENG",
+	"low": "TF",
+	"high": "TF"
+}, {
+	"region": "GB-ENG",
+	"low": "TN",
+	"high": "TN"
+}, {
+	"region": "GB-ENG",
+	"low": "TQ",
+	"high": "TQ"
+}, {
+	"region": "GB-ENG",
+	"low": "TR",
+	"high": "TR"
+}, {
+	"region": "GB-ENG",
+	"low": "TS",
+	"high": "TS"
+}, {
+	"region": "GB-ENG",
+	"low": "TW",
+	"high": "TW"
+}, {
+	"region": "GB-ENG",
+	"low": "UB",
+	"high": "UB"
+}, {
+	"region": "GB-ENG",
+	"low": "W",
+	"high": "W"
+}, {
+	"region": "GB-ENG",
+	"low": "WA",
+	"high": "WA"
+}, {
+	"region": "GB-ENG",
+	"low": "WC",
+	"high": "WC"
+}, {
+	"region": "GB-ENG",
+	"low": "WD",
+	"high": "WD"
+}, {
+	"region": "GB-ENG",
+	"low": "WF",
+	"high": "WF"
+}, {
+	"region": "GB-ENG",
+	"low": "WN",
+	"high": "WN"
+}, {
+	"region": "GB-ENG",
+	"low": "WR",
+	"high": "WR"
+}, {
+	"region": "GB-ENG",
+	"low": "WS",
+	"high": "WS"
+}, {
+	"region": "GB-ENG",
+	"low": "WV",
+	"high": "WV"
+}, {
+	"region": "GB-ENG",
+	"low": "YO",
+	"high": "YO"
+}, {
+	"region": "GB-SCT",
+	"low": "ZE",
+	"high": "ZE"
+}]

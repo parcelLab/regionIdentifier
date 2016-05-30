@@ -1,0 +1,45 @@
+[{
+  "low": 2000,
+  "high": 2999,
+  "region": "BE-AN"
+}, {
+  "low": 9000,
+  "high": 9999,
+  "region": "BE-OV"
+}, {
+  "low": 1500,
+  "high": 1999,
+  "region": "BE-VB"
+}, {
+  "low": 3000,
+  "high": 3499,
+  "region": "BE-VB"
+}, {
+  "low": 3500,
+  "high": 3999,
+  "region": "BE-LI"
+}, {
+  "low": 8000,
+  "high": 8999,
+  "region": "BE-WV"
+}, {
+  "low": 7000,
+  "high": 7999,
+  "region": "BE-HT"
+}, {
+  "low": 4000,
+  "high": 4999,
+  "region": "BE-LG"
+}, {
+  "low": 6000,
+  "high": 6999,
+  "region": "BE-LX"
+}, {
+  "low": 5000,
+  "high": 5999,
+  "region": "BE-NA"
+}, {
+  "low": 1300,
+  "high": 1499,
+  "region": "BE-BW"
+}]

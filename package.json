@@ -1,0 +1,46 @@
+{
+  "name": "region_identifier",
+  "version": "0.0.1",
+  "description": "Gets the name of the region depending of the country and zip code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcelLab/regionIdentifier.git"
+  },
+  "keywords": [
+    "regions",
+    "country"
+  ],
+  "author": "Oscar R. Reyes, Julian Krenge.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parcelLab/regionIdentifier/issues"
+  },
+  "homepage": "https://github.com/parcelLab/regionIdentifier",
+  "jshintConfig": {
+    "esnext": true,
+    "eqeqeq": true,
+    "forin": true,
+    "undef": true,
+    "unused": true,
+    "latedef": true,
+    "nocomma": true,
+    "predef": [
+      "console",
+      "require",
+      "process",
+      "module",
+      "exports",
+      "describe",
+      "it",
+      "setTimeout"
+    ]
+  },
+  "dependencies": {
+    "countryjs": "^1.5.2",
+    "request": "^2.72.0"
+  }
+}
