@@ -1,6 +1,6 @@
 const RegionIdentifier = require('../lib/region');
 
-var identifier = new RegionIdentifier('AIzaSyAyYRbYFwW3F7SPHhmNXh75xkwFL1o1ndU');
+var identifier = new RegionIdentifier('<API KEY>');
 
 identifier.get('AUT', '1999', console.log);
 identifier.get('BEL', '1701', console.log);
