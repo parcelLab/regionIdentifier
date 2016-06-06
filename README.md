@@ -34,16 +34,16 @@ var identifier = new RegionIdentifier('<GOOGLE API KEY>');
 ```javascript
 //Using country name
 identifier.get('Deutschland', '6578', function(err, region) {
-    console.log(err, regio); // null DE-TH
+    console.log(err, region); // null DE-TH
 });
 
 //using ISO3 code
 identifier.get('DEU', '6578', function(err, region) {
-    console.log(err, regio); // null DE-TH
+    console.log(err, region); // null DE-TH
 });
 
 //using ISO2 code
 identifier.get('DE', '6578', function(err, region) {
-    console.log(err, regio); // null DE-TH
+    console.log(err, region); // null DE-TH
 });
 ```
