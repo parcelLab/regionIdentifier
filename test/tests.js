@@ -35,8 +35,8 @@ var tests = [
  },
  {
   name:'ESP', 
- 	zp: '49000',
- 	result: 'ES-ZA',
+ 	zp: '04004',
+ 	result: 'ES-AN',
  },
  {
   name:'FRA', 
