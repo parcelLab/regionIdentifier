@@ -93,6 +93,16 @@ var tests = [{
   result: 'NL-UT',
   usingGoogle: false,
 }, {
+  name: 'NLD',
+  zp: '6869 VC',
+  result: 'NL-GE',
+  usingGoogle: false,
+}, {
+  name: 'NLD',
+  zp: '2294 HC',
+  result: 'NL-ZH',
+  usingGoogle: false,
+}, {
   name: 'MEX',
   zp: '35078',
   result: 'MX-DUG',
