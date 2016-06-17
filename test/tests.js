@@ -28,6 +28,11 @@ var tests = [{
   result: 'CH-BE',
   usingGoogle: false,
 }, {
+  name: 'CHE',
+  zp: '9488',
+  result: 'CH-SG',
+  usingGoogle: false,
+}, {
   name: 'DEU',
   zp: '6578',
   result: 'DE-TH',
