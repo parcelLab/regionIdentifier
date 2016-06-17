@@ -15,10 +15,13 @@ ISO codes used for all the regions can be found here: https://en.wikipedia.org/w
 >- France.
 >- Netherlands.
 
-**Test**
+### Test
 ```sh
 $ npm test
 ```
+### License 
+This module was built using adapted information from http://download.geonames.org/ that's registered under the **CC BY 3.0** as well as this module.
+Link to more information about **CC BY 3.0** http://creativecommons.org/licenses/by/3.0/.
 
 ### Usage
 
@@ -31,16 +34,16 @@ var identifier = new RegionIdentifier('<GOOGLE API KEY>');
 ```javascript
 //Using country name
 identifier.get('Deutschland', '6578', function(err, region) {
-    console.log(err, regio); // null DE-TH
+    console.log(err, region); // null DE-TH
 });
 
 //using ISO3 code
 identifier.get('DEU', '6578', function(err, region) {
-    console.log(err, regio); // null DE-TH
+    console.log(err, region); // null DE-TH
 });
 
 //using ISO2 code
 identifier.get('DE', '6578', function(err, region) {
-    console.log(err, regio); // null DE-TH
+    console.log(err, region); // null DE-TH
 });
 ```
