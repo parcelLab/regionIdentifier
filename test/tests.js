@@ -53,6 +53,36 @@ var tests = [{
   result: 'GB-SCT',
   usingGoogle: false,
 }, {
+  name: 'GBR',
+  zp: 'EC2N 1AR',
+  result: 'GB-ENG',
+  usingGoogle: false,
+}, {
+  name: 'GBR',
+  zp: 'FY83QN',
+  result: 'GB-ENG',
+  usingGoogle: false,
+}, {
+  name: 'GBR',
+  zp: 'CF466RT',
+  result: 'GB-WLS',
+  usingGoogle: false,
+}, {
+  name: 'GBR',
+  zp: 'm14 5pq',
+  result: 'GB-ENG',
+  usingGoogle: false,
+}, {
+  name: 'GBR',
+  zp: 'Po10 8Eg',
+  result: 'GB-ENG',
+  usingGoogle: false,
+}, {
+  name: 'GBR',
+  zp: 'L5 3QN',
+  result: 'GB-ENG',
+  usingGoogle: false,
+}, {
   name: 'ITA',
   zp: '67033',
   result: 'IT-65',
