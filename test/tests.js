@@ -48,6 +48,11 @@ var tests = [{
   result: 'FR-D',
   usingGoogle: false,
 }, {
+  name: 'FRA',
+  zp: '92440',
+  result: 'FR-J',
+  usingGoogle: false,
+}, {
   name: 'FR',
   zp: '25090',
   result: 'FR-D',
@@ -91,6 +96,11 @@ var tests = [{
   name: 'ITA',
   zp: '67033',
   result: 'IT-65',
+  usingGoogle: false,
+}, {
+  name: 'ITA',
+  zp: '41121',
+  result: 'IT-45',
   usingGoogle: false,
 }, {
   name: 'NLD',
