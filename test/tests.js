@@ -45,7 +45,7 @@ var tests = [{
 }, {
   name: 'FRA',
   zp: '25090',
-  result: 'FR-D',
+  result: 'FR-I',
   usingGoogle: false,
 }, {
   name: 'FRA',
@@ -53,9 +53,44 @@ var tests = [{
   result: 'FR-J',
   usingGoogle: false,
 }, {
+  name: 'FRA',
+  zp: '75116',
+  result: 'FR-J',
+  usingGoogle: false,
+}, {
+  name: 'FRA',
+  zp: '51000',
+  result: 'FR-G',
+  usingGoogle: false,
+}, {
+  name: 'FRA',
+  zp: '51100',
+  result: 'FR-G',
+  usingGoogle: false,
+}, {
+  name: 'FRA',
+  zp: '75020',
+  result: 'FR-J',
+  usingGoogle: false,
+}, {
   name: 'FR',
   zp: '25090',
-  result: 'FR-D',
+  result: 'FR-I',
+  usingGoogle: false,
+}, {
+  name: 'FR',
+  zp: '87200',
+  result: 'FR-L',
+  usingGoogle: false,
+}, {
+  name: 'FR',
+  zp: '61100',
+  result: 'FR-P',
+  usingGoogle: false,
+}, {
+  name: 'FR',
+  zp: '81000',
+  result: 'FR-N',
   usingGoogle: false,
 }, {
   name: 'GBR',
@@ -122,11 +157,6 @@ var tests = [{
   zp: '2294 HC',
   result: 'NL-ZH',
   usingGoogle: false,
-}, {
-  name: 'MEX',
-  zp: '35078',
-  result: 'MX-DUG',
-  usingGoogle: true,
 }];
 
 describe('Beggining Test.', function () {

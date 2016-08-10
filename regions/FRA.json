@@ -1,27 +1,23 @@
 [{
   "low": 1000,
   "high": 1400,
-  "region": "FR-C"
+  "region": "FR-V"
 }, {
   "low": 1410,
-  "high": 1410,
-  "region": "FR-D"
-}, {
-  "low": 1420,
   "high": 1580,
-  "region": "FR-C"
+  "region": "FR-V"
 }, {
   "low": 1590,
   "high": 1590,
-  "region": "FR-D"
+  "region": "FR-I"
 }, {
-  "low": 1600,
+  "low": 1590,
   "high": 1990,
-  "region": "FR-C"
+  "region": "FR-V"
 }, {
   "low": 2000,
   "high": 2939,
-  "region": "FR-O"
+  "region": "FR-S"
 }, {
   "low": 3000,
   "high": 3800,
@@ -32,32 +28,32 @@
   "region": "FR-U"
 }, {
   "low": 5700,
-  "high": 5700,
-  "region": "FR-C"
-}, {
-  "low": 5800,
   "high": 6999,
   "region": "FR-U"
 }, {
   "low": 7000,
   "high": 7800,
-  "region": "FR-C"
+  "region": "FR-V"
 }, {
   "low": 8000,
   "high": 8800,
-  "region": "FR-A"
+  "region": "FR-G"
 }, {
   "low": 9000,
   "high": 9800,
-  "region": "FR-K"
+  "region": "FR-N"
 }, {
   "low": 10000,
   "high": 10910,
-  "region": "FR-A"
+  "region": "FR-G"
 }, {
   "low": 11000,
-  "high": 12850,
+  "high": 11898,
   "region": "FR-K"
+}, {
+  "low": 12000,
+  "high": 12850,
+  "region": "FR-N"
 }, {
   "low": 13000,
   "high": 13990,
@@ -65,7 +61,7 @@
 }, {
   "low": 14000,
   "high": 14990,
-  "region": "FR-Q"
+  "region": "FR-P"
 }, {
   "low": 15000,
   "high": 15800,
@@ -73,7 +69,7 @@
 }, {
   "low": 16000,
   "high": 17940,
-  "region": "FR-B"
+  "region": "FR-T"
 }, {
   "low": 18000,
   "high": 18998,
@@ -81,7 +77,7 @@
 }, {
   "low": 19000,
   "high": 19800,
-  "region": "FR-B"
+  "region": "FR-L"
 }, {
   "low": 20000,
   "high": 20900,
@@ -96,16 +92,20 @@
   "region": "FR-E"
 }, {
   "low": 23000,
+  "high": 23800,
+  "region": "FR-L"
+}, {
+  "low": 24000,
   "high": 24926,
   "region": "FR-B"
 }, {
   "low": 25000,
   "high": 25960,
-  "region": "FR-D"
+  "region": "FR-I"
 }, {
   "low": 26000,
   "high": 26958,
-  "region": "FR-C"
+  "region": "FR-V"
 }, {
   "low": 27000,
   "high": 27950,
@@ -120,8 +120,12 @@
   "region": "FR-E"
 }, {
   "low": 30000,
-  "high": 32810,
+  "high": 30980,
   "region": "FR-K"
+}, {
+  "low": 31000,
+  "high": 32810,
+  "region": "FR-N"
 }, {
   "low": 33000,
   "high": 33998,
@@ -136,16 +140,20 @@
   "region": "FR-E"
 }, {
   "low": 36000,
+  "high": 37160,
+  "region": "FR-F"
+}, {
+  "low": 37170,
   "high": 37942,
   "region": "FR-F"
 }, {
   "low": 38000,
   "high": 38980,
-  "region": "FR-C"
+  "region": "FR-V"
 }, {
   "low": 39000,
   "high": 39809,
-  "region": "FR-D"
+  "region": "FR-I"
 }, {
   "low": 40000,
   "high": 40994,
@@ -156,6 +164,14 @@
   "region": "FR-F"
 }, {
   "low": 42000,
+  "high": 42610,
+  "region": "FR-V"
+}, {
+  "low": 42620,
+  "high": 42990,
+  "region": "FR-V"
+}, {
+  "low": 43000,
   "high": 43810,
   "region": "FR-C"
 }, {
@@ -169,13 +185,17 @@
 }, {
   "low": 46000,
   "high": 46800,
-  "region": "FR-K"
+  "region": "FR-N"
 }, {
   "low": 47000,
   "high": 47931,
   "region": "FR-B"
 }, {
   "low": 48000,
+  "high": 48250,
+  "region": "FR-K"
+}, {
+  "low": 48260,
   "high": 48800,
   "region": "FR-K"
 }, {
@@ -185,11 +205,11 @@
 }, {
   "low": 50000,
   "high": 50958,
-  "region": "FR-Q"
+  "region": "FR-P"
 }, {
   "low": 51000,
   "high": 52920,
-  "region": "FR-A"
+  "region": "FR-G"
 }, {
   "low": 53000,
   "high": 53971,
@@ -197,7 +217,7 @@
 }, {
   "low": 54000,
   "high": 55840,
-  "region": "FR-A"
+  "region": "FR-M"
 }, {
   "low": 56000,
   "high": 56998,
@@ -205,21 +225,33 @@
 }, {
   "low": 57000,
   "high": 57990,
-  "region": "FR-A"
+  "region": "FR-M"
 }, {
   "low": 58000,
   "high": 58800,
   "region": "FR-D"
 }, {
   "low": 59000,
-  "high": 60981,
+  "high": 59998,
   "region": "FR-O"
 }, {
+  "low": 60000,
+  "high": 60981,
+  "region": "FR-S"
+}, {
   "low": 61000,
+  "high": 61420,
+  "region": "FR-P"
+}, {
+  "low": 61430,
   "high": 61994,
-  "region": "FR-Q"
+  "region": "FR-P"
 }, {
   "low": 62000,
+  "high": 62760,
+  "region": "FR-O"
+}, {
+  "low": 62770,
   "high": 62990,
   "region": "FR-O"
 }, {
@@ -232,6 +264,10 @@
   "region": "FR-B"
 }, {
   "low": 65000,
+  "high": 65951,
+  "region": "FR-N"
+}, {
+  "low": 66000,
   "high": 66987,
   "region": "FR-K"
 }, {
@@ -241,9 +277,13 @@
 }, {
   "low": 69001,
   "high": 69998,
-  "region": "FR-C"
+  "region": "FR-V"
 }, {
   "low": 70000,
+  "high": 70807,
+  "region": "FR-I"
+}, {
+  "low": 71000,
   "high": 71990,
   "region": "FR-D"
 }, {
@@ -253,7 +293,7 @@
 }, {
   "low": 73000,
   "high": 74999,
-  "region": "FR-C"
+  "region": "FR-V"
 }, {
   "low": 75000,
   "high": 75998,
@@ -269,15 +309,15 @@
 }, {
   "low": 79000,
   "high": 79953,
-  "region": "FR-B"
+  "region": "FR-T"
 }, {
   "low": 80000,
   "high": 80980,
-  "region": "FR-O"
+  "region": "FR-S"
 }, {
   "low": 81000,
   "high": 82800,
-  "region": "FR-K"
+  "region": "FR-N"
 }, {
   "low": 83000,
   "high": 84977,
@@ -288,16 +328,24 @@
   "region": "FR-R"
 }, {
   "low": 86000,
+  "high": 86984,
+  "region": "FR-T"
+}, {
+  "low": 87000,
   "high": 87950,
-  "region": "FR-B"
+  "region": "FR-L"
 }, {
   "low": 88000,
   "high": 88809,
-  "region": "FR-A"
+  "region": "FR-M"
 }, {
   "low": 89000,
-  "high": 90850,
+  "high": 89800,
   "region": "FR-D"
+}, {
+  "low": 90000,
+  "high": 90850,
+  "region": "FR-I"
 }, {
   "low": 91000,
   "high": 95978,

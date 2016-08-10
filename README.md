@@ -12,14 +12,15 @@ ISO codes used for all the regions can be found here: https://en.wikipedia.org/w
 >- Spain.
 >- Belgium.
 >- Italy.
->- France.
+>- France. Hint: Regions in France are still those used before the reformation in late 2015.
 >- Netherlands.
 
 ### Test
 ```sh
 $ npm test
 ```
-### License 
+
+### License
 This module was built using adapted information from http://download.geonames.org/ that's registered under the **CC BY 3.0** as well as this module.
 Link to more information about **CC BY 3.0** http://creativecommons.org/licenses/by/3.0/.
 
