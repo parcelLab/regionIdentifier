@@ -84,6 +84,11 @@ var tests = [{
   usingGoogle: false,
 }, {
   name: 'FR',
+  zp: '87200 CEDEX 1',
+  result: 'FR-L',
+  usingGoogle: false,
+}, {
+  name: 'FR',
   zp: '61100',
   result: 'FR-P',
   usingGoogle: false,
