@@ -20,8 +20,7 @@
     "url": "https://github.com/parcelLab/regionIdentifier/issues"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.4"
+    "chai": "^3.4.1"
   },
   "homepage": "https://github.com/parcelLab/regionIdentifier",
   "jshintConfig": {
@@ -44,7 +43,7 @@
     ]
   },
   "dependencies": {
-    "countryjs": "github:jkrenge/countryjs",
+    "countryjs": "github:parcellab/countryjs",
     "request": "^2.72.0"
   }
 }
