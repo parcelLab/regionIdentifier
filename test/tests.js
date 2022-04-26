@@ -163,6 +163,11 @@ var tests = [{
   result: 'NL-ZH',
   usingGoogle: false,
 }, {
+  name: 'NLD',
+  zp: '2294HC',
+  result: 'NL-ZH',
+  usingGoogle: false,
+}, {
   name: 'CAN',
   zp: 'X1A 0E2',
   result: 'CA-NT',
@@ -181,6 +186,11 @@ var tests = [{
   name: 'CAN',
   zp: 'G1P 2J1',
   result: 'CA-QC',
+  usingGoogle: false,
+}, {
+  name: 'MEX',
+  zp: '06000',
+  result: 'MX-CMX',
   usingGoogle: false,
 }];
 
