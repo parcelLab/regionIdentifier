@@ -20,7 +20,8 @@
     "url": "https://github.com/parcelLab/regionIdentifier/issues"
   },
   "devDependencies": {
-    "chai": "^3.4.1"
+    "chai": "^3.4.1",
+    "mocha": "^9.2.2"
   },
   "homepage": "https://github.com/parcelLab/regionIdentifier",
   "jshintConfig": {
