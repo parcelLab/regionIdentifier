@@ -1,0 +1,292 @@
+[{
+	"region": "MX-CMX",
+	"low": "00"
+}, {
+	"region": "MX-CMX",
+	"low": "01"
+}, {
+	"region": "MX-CMX",
+	"low": "02"
+}, {
+	"region": "MX-CMX",
+	"low": "03"
+}, {
+	"region": "MX-CMX",
+	"low": "04"
+}, {
+	"region": "MX-CMX",
+	"low": "05"
+}, {
+	"region": "MX-CMX",
+	"low": "06"
+}, {
+	"region": "MX-CMX",
+	"low": "07"
+}, {
+	"region": "MX-CMX",
+	"low": "08"
+}, {
+	"region": "MX-CMX",
+	"low": "09"
+}, {
+	"region": "MX-CMX",
+	"low": "10"
+}, {
+	"region": "MX-CMX",
+	"low": "11"
+}, {
+	"region": "MX-CMX",
+	"low": "12"
+}, {
+	"region": "MX-CMX",
+	"low": "13"
+}, {
+	"region": "MX-CMX",
+	"low": "14"
+}, {
+	"region": "MX-CMX",
+	"low": "15"
+}, {
+	"region": "MX-CMX",
+	"low": "16"
+}, {
+	"region": "MX-AGU",
+	"low": "20"
+}, {
+	"region": "MX-BCN",
+	"low": "21"
+}, {
+	"region": "MX-BCN",
+	"low": "22"
+}, {
+	"region": "MX-BCS",
+	"low": "23"
+}, {
+	"region": "MX-CAM",
+	"low": "24"
+}, {
+	"region": "MX-CHP",
+	"low": "29"
+}, {
+	"region": "MX-CHP",
+	"low": "30"
+}, {
+	"region": "MX-CHH",
+	"low": "31"
+}, {
+	"region": "MX-CHH",
+	"low": "32"
+}, {
+	"region": "MX-CHH",
+	"low": "33"
+}, {
+	"region": "MX-COA",
+	"low": "25"
+}, {
+	"region": "MX-COA",
+	"low": "26"
+}, {
+	"region": "MX-COA",
+	"low": "27"
+}, {
+	"region": "MX-COL",
+	"low": "28"
+}, {
+	"region": "MX-DUR",
+	"low": "34"
+}, {
+	"region": "MX-DUR",
+	"low": "35"
+}, {
+	"region": "MX-GUA",
+	"low": "36"
+}, {
+	"region": "MX-GUA",
+	"low": "37"
+}, {
+	"region": "MX-GUA",
+	"low": "38"
+}, {
+	"region": "MX-GRO",
+	"low": "39"
+}, {
+	"region": "MX-GRO",
+	"low": "40"
+}, {
+	"region": "MX-GRO",
+	"low": "41"
+}, {
+	"region": "MX-HID",
+	"low": "42"
+}, {
+	"region": "MX-HID",
+	"low": "43"
+}, {
+	"region": "MX-JAL",
+	"low": "44"
+}, {
+	"region": "MX-JAL",
+	"low": "45"
+}, {
+	"region": "MX-JAL",
+	"low": "46"
+}, {
+	"region": "MX-JAL",
+	"low": "47"
+}, {
+	"region": "MX-JAL",
+	"low": "48"
+}, {
+	"region": "MX-JAL",
+	"low": "49"
+}, {
+	"region": "MX-MEX",
+	"low": "50"
+}, {
+	"region": "MX-MEX",
+	"low": "51"
+}, {
+	"region": "MX-MEX",
+	"low": "52"
+}, {
+	"region": "MX-MEX",
+	"low": "53"
+}, {
+	"region": "MX-MEX",
+	"low": "54"
+}, {
+	"region": "MX-MEX",
+	"low": "55"
+}, {
+	"region": "MX-MEX",
+	"low": "56"
+}, {
+	"region": "MX-MEX",
+	"low": "57"
+}, {
+	"region": "MX-MIC",
+	"low": "58"
+}, {
+	"region": "MX-MIC",
+	"low": "59"
+}, {
+	"region": "MX-MIC",
+	"low": "60"
+}, {
+	"region": "MX-MIC",
+	"low": "61"
+}, {
+	"region": "MX-MOR",
+	"low": "62"
+}, {
+	"region": "MX-NAY",
+	"low": "63"
+}, {
+	"region": "MX-NLE",
+	"low": "64"
+}, {
+	"region": "MX-NLE",
+	"low": "65"
+}, {
+	"region": "MX-NLE",
+	"low": "66"
+}, {
+	"region": "MX-NLE",
+	"low": "67"
+}, {
+	"region": "MX-OAX",
+	"low": "68"
+}, {
+	"region": "MX-OAX",
+	"low": "69"
+}, {
+	"region": "MX-OAX",
+	"low": "70"
+}, {
+	"region": "MX-OAX",
+	"low": "71"
+}, {
+	"region": "MX-PUE",
+	"low": "72"
+}, {
+	"region": "MX-PUE",
+	"low": "73"
+}, {
+	"region": "MX-PUE",
+	"low": "74"
+}, {
+	"region": "MX-PUE",
+	"low": "75"
+}, {
+	"region": "MX-QUE",
+	"low": "76"
+}, {
+	"region": "MX-ROO",
+	"low": "77"
+}, {
+	"region": "MX-SLP",
+	"low": "78"
+}, {
+	"region": "MX-SLP",
+	"low": "79"
+}, {
+	"region": "MX-SIN",
+	"low": "80"
+}, {
+	"region": "MX-SIN",
+	"low": "81"
+}, {
+	"region": "MX-SIN",
+	"low": "82"
+}, {
+	"region": "MX-SON",
+	"low": "83"
+}, {
+	"region": "MX-SON",
+	"low": "84"
+}, {
+	"region": "MX-SON",
+	"low": "85"
+}, {
+	"region": "MX-TAB",
+	"low": "86"
+}, {
+	"region": "MX-TAM",
+	"low": "87"
+}, {
+	"region": "MX-TAM",
+	"low": "88"
+}, {
+	"region": "MX-TAM",
+	"low": "89"
+}, {
+	"region": "MX-TLA",
+	"low": "90"
+}, {
+	"region": "MX-VER",
+	"low": "91"
+}, {
+	"region": "MX-VER",
+	"low": "92"
+}, {
+	"region": "MX-VER",
+	"low": "93"
+}, {
+	"region": "MX-VER",
+	"low": "94"
+}, {
+	"region": "MX-VER",
+	"low": "95"
+}, {
+	"region": "MX-VER",
+	"low": "96"
+}, {
+	"region": "MX-YUC",
+	"low": "97"
+}, {
+	"region": "MX-ZAC",
+	"low": "98"
+}, {
+	"region": "MX-ZAC",
+	"low": "99"
+}]
