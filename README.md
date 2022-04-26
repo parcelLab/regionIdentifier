@@ -6,16 +6,17 @@ Utility module that provides an easy way to identify the region of the country d
 ISO codes used for all the regions can be found here: https://en.wikipedia.org/wiki/ISO_3166-2.
 
 **Predefined Regions**
->- United Kingdom
->- Deutschland
->- Austria 
->- Spain 
->- Belgium
->- Italy
->- France (Hint: Regions in France are still those used before the reformation in late 2015)
->- Netherlands
+>- AUT
+>- BEL
+>- CHE
+>- DEU 
+>- ESP
+>- FRA
+>- GBR
+>- ITA
+>- NLD
+>- RUS
 >- USA
->- Russia
 
 ### Test
 ```sh
