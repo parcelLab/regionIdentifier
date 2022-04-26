@@ -162,6 +162,26 @@ var tests = [{
   zp: '2294 HC',
   result: 'NL-ZH',
   usingGoogle: false,
+}, {
+  name: 'CAN',
+  zp: 'X1A 0E2',
+  result: 'CA-NT',
+  usingGoogle: false,
+}, {
+  name: 'CAN',
+  zp: 'X1A 0E2',
+  result: 'CA-NT',
+  usingGoogle: false,
+}, {
+  name: 'CAN',
+  zp: 'X1A0E2',
+  result: 'CA-NT',
+  usingGoogle: false,
+}, {
+  name: 'CAN',
+  zp: 'G1P 2J1',
+  result: 'CA-QC',
+  usingGoogle: false,
 }];
 
 describe('Beggining Test.', function () {
@@ -169,7 +189,7 @@ describe('Beggining Test.', function () {
   describe('Testing get function', function () {
     tests.forEach(function (test) {
       identifier.get(test.name, test.zp, function (err, region, googleUsed) {
-        var text = 'Validating result for: ' + test.name + ' with zip code:' +
+        var text = 'Validating result for: ' + test.name + ' with zip code: ' +
           test.zp + ' result: ' + region + ', error: ' + err + ', google was used: ' + googleUsed;
         it(text, function () {
           expect(region).to.be.equals(test.result);
