@@ -44,6 +44,6 @@
   },
   "dependencies": {
     "countryjs": "github:parcellab/countryjs",
-    "request": "^2.72.0"
+    "request": "^2.88.2"
   }
 }
