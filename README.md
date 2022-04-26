@@ -17,6 +17,7 @@ ISO codes used for all the regions can be found here: https://en.wikipedia.org/w
 >- NLD
 >- RUS
 >- USA
+>- CAN
 
 ### Test
 ```sh
