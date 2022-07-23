@@ -192,6 +192,16 @@ var tests = [{
   zp: '06000',
   result: 'MX-CMX',
   usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '972022239',
+  result: 'US-OR',
+  usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '06103',
+  result: 'US-CT',
+  usingGoogle: false,
 }];
 
 describe('Beggining Test.', function () {

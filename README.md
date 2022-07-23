@@ -3,7 +3,10 @@ Region Identifier
 
 Utility module that provides an easy way to identify the region of the country depending on the postal code, brings a set of determined regions for some of the countries and if it doesn't find a match uses google geolocation API to get the region.
 
-ISO codes used for all the regions can be found here: https://en.wikipedia.org/wiki/ISO_3166-2.
+*Relevant links:*
+* https://en.wikipedia.org/wiki/ISO_3166-2 — codes used for all the regions can be found here
+* https://en.wikipedia.org/wiki/Category:Postal_codes_by_country - explanations of postal code structure per country
+* https://download.geonames.org/export/zip/ - all the Geoname files for download (see below)
 
 **Predefined Regions**
 >- AUT
