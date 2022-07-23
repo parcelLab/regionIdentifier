@@ -192,6 +192,11 @@ var tests = [{
   zp: '06000',
   result: 'MX-CMX',
   usingGoogle: false,
+}, {
+  name: 'QAT',
+  zp: '06000',
+  result: null,
+  usingGoogle: false,
 }];
 
 describe('Beggining Test.', function () {
