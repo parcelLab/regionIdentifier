@@ -193,6 +193,15 @@ var tests = [{
   result: 'MX-CMX',
   usingGoogle: false,
 }, {
+  name: 'USA',
+  zp: '972022239',
+  result: 'US-OR',
+  usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '06103',
+  result: 'US-CT',
+}, {
   name: 'QAT',
   zp: '06000',
   result: null,
