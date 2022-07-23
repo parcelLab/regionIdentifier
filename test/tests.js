@@ -201,6 +201,10 @@ var tests = [{
   name: 'USA',
   zp: '06103',
   result: 'US-CT',
+}, {
+  name: 'QAT',
+  zp: '06000',
+  result: null,
   usingGoogle: false,
 }];
 
