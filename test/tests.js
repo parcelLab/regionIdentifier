@@ -201,6 +201,32 @@ var tests = [{
   name: 'USA',
   zp: '06103',
   result: 'US-CT',
+  usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '00646',
+  result: 'US-PR',
+  usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '96799',
+  result: 'US-AS',
+  usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '96921',
+  result: 'US-GU',
+  usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '96951',
+  result: 'US-MP',
+  usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '00831',
+  result: 'US-VI',
+  usingGoogle: false,
 }, {
   name: 'QAT',
   zp: '06000',
