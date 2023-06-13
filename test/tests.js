@@ -232,6 +232,16 @@ var tests = [{
   zp: '06000',
   result: null,
   usingGoogle: false,
+}, {
+  name: 'CAN',
+  zp: 'S0J 0G0',
+  result: 'CA-SK',
+  usingGoogle: false,
+}, {
+  name: 'USA',
+  zp: '10038',
+  result: 'US-NY',
+  usingGoogle: false,
 }];
 
 describe('Beggining Test.', function () {
