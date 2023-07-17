@@ -1,4 +1,4 @@
-Region Identifier
+# Region Identifier
 =============================
 
 Utility module that provides an easy way to identify the region of the country depending on the postal code, brings a set of determined regions for some of the countries and if it doesn't find a match uses google geolocation API to get the region.
@@ -8,22 +8,22 @@ Utility module that provides an easy way to identify the region of the country d
 * https://en.wikipedia.org/wiki/Category:Postal_codes_by_country - explanations of postal code structure per country
 * https://download.geonames.org/export/zip/ - all the Geoname files for download (see below)
 
-**Predefined Regions**
->- AUT
->- BEL
->- CHE
->- DEU 
->- ESP
->- FRA
->- GBR
->- ITA
->- NLD
->- RUS
->- USA
->- CAN
->- MEX
+#### Predefined Regions
+- AUT
+- BEL
+- CHE
+- DEU 
+- ESP
+- FRA
+- GBR
+- ITA
+- NLD
+- RUS
+- USA
+- CAN
+- MEX
 
-### Test
+## Test
 ```sh
 $ npm test
 ```
@@ -32,14 +32,14 @@ $ npm test
 This module was built using adapted information from http://download.geonames.org/ that's registered under the **CC BY 3.0** as well as this module.
 Link to more information about **CC BY 3.0** http://creativecommons.org/licenses/by/3.0/.
 
-### Usage
+## Usage
 
-**Basic:**
+#### Basic:
 ```javascript
 var RegionIdentifier = requrie('regionIdentifier');
 var identifier = new RegionIdentifier('<GOOGLE API KEY>');
 ```
-**Get region:**
+#### Get region:
 ```javascript
 //Using country name
 identifier.get('Deutschland', '6578', function(err, region) {
