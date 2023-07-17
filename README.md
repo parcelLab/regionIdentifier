@@ -1,5 +1,4 @@
 # Region Identifier
-=============================
 
 Utility module that provides an easy way to identify the region of the country depending on the postal code, brings a set of determined regions for some of the countries and if it doesn't find a match uses google geolocation API to get the region.
 
@@ -11,17 +10,18 @@ Utility module that provides an easy way to identify the region of the country d
 #### Predefined Regions
 - AUT
 - BEL
+- CAN
 - CHE
-- DEU 
+- DEU
 - ESP
 - FRA
 - GBR
 - ITA
+- MEX
 - NLD
 - RUS
+- SWE
 - USA
-- CAN
-- MEX
 
 ## Test
 ```sh
@@ -36,8 +36,8 @@ Link to more information about **CC BY 3.0** http://creativecommons.org/licenses
 
 #### Basic:
 ```javascript
-var RegionIdentifier = requrie('regionIdentifier');
-var identifier = new RegionIdentifier('<GOOGLE API KEY>');
+const RegionIdentifier = requrie('regionIdentifier');
+const identifier = new RegionIdentifier('<GOOGLE API KEY>');
 ```
 #### Get region:
 ```javascript
