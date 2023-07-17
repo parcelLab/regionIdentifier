@@ -283,6 +283,42 @@ const countriesPostalCodes = {
     result: 'SE-C',
     usingGoogle: false,
   }],
+  'Finland': [{
+    name: 'FIN',
+    zip: '00940',
+    result: 'FI-18',
+    usingGoogle: false,
+  },{
+    name: 'FIN',
+    zip: '70840',
+    result: 'FI-15',
+    usingGoogle: false,
+  },{
+    name: 'FIN',
+    zip: '96900',
+    result: 'FI-10',
+    usingGoogle: false,
+  },{
+    name: 'FIN',
+    zip: '00100',
+    result: 'FI-18',
+    usingGoogle: false,
+  },{
+    name: 'FIN',
+    zip: '99990',
+    result: 'FI-10',
+    usingGoogle: false,
+  },{
+    name: 'FIN',
+    zip: '20200',
+    result: 'FI-19',
+    usingGoogle: false,
+  },{
+    name: 'FIN',
+    zip: '22100',
+    result: 'FI-01',
+    usingGoogle: false,
+  }],
 };
 
 describe('REGION IDENTIFIER', () => {

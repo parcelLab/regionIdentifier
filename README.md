@@ -14,6 +14,7 @@ Utility module that provides an easy way to identify the region of the country d
 - CHE
 - DEU
 - ESP
+- FIN
 - FRA
 - GBR
 - ITA
