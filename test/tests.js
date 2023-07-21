@@ -1,5 +1,22 @@
-const RegionIdentifier = require('../lib/region');
+const Country = require('countryjs');
 const expect = require('chai').expect;
+const proxyquire = require('proxyquire');
+const request = require('request');
+const sinon = require('sinon');
+
+// Mock request.get
+const mockGoogleMapsApiResponse = {
+  results: [{
+    address_components: [
+      {
+        short_name: 'BY',
+        types: ['administrative_area_level_1', 'political'],
+      },
+    ],
+  }],
+};
+const requestStub = sinon.stub(request, 'get').yields(null, { body: JSON.stringify(mockGoogleMapsApiResponse) });
+const RegionIdentifier = proxyquire('../lib/region', { request: { get: requestStub } });
 
 const identifier = new RegionIdentifier('<API KEY>');
 
@@ -257,27 +274,27 @@ const countriesPostalCodes = {
     zip: '11337',
     result: 'SE-AB',
     usingGoogle: false,
-  },{
+  }, {
     name: 'SWE',
     zip: '95435',
     result: 'SE-BD',
     usingGoogle: false,
-  },{
+  }, {
     name: 'SWE',
     zip: '23531',
     result: 'SE-M',
     usingGoogle: false,
-  },{
+  }, {
     name: 'SWE',
     zip: '10000',
     result: 'SE-AB',
     usingGoogle: false,
-  },{
+  }, {
     name: 'SWE',
     zip: '99999',
     result: 'SE-BD',
     usingGoogle: false,
-  },{
+  }, {
     name: 'SWE',
     zip: '81999',
     result: 'SE-C',
@@ -288,32 +305,32 @@ const countriesPostalCodes = {
     zip: '00940',
     result: 'FI-18',
     usingGoogle: false,
-  },{
+  }, {
     name: 'FIN',
     zip: '70840',
     result: 'FI-15',
     usingGoogle: false,
-  },{
+  }, {
     name: 'FIN',
     zip: '96900',
     result: 'FI-10',
     usingGoogle: false,
-  },{
+  }, {
     name: 'FIN',
     zip: '00100',
     result: 'FI-18',
     usingGoogle: false,
-  },{
+  }, {
     name: 'FIN',
     zip: '99990',
     result: 'FI-10',
     usingGoogle: false,
-  },{
+  }, {
     name: 'FIN',
     zip: '20200',
     result: 'FI-19',
     usingGoogle: false,
-  },{
+  }, {
     name: 'FIN',
     zip: '22100',
     result: 'FI-01',
@@ -322,17 +339,57 @@ const countriesPostalCodes = {
 };
 
 describe('REGION IDENTIFIER', () => {
+  before(() => {
+    // sinon.stub(request, 'get').callsFake((url, callback) => {
+    //   callback(null, { body: '' });
+    // });
+    // sinon.stub(request, 'get').yields(null, { body: '' });
+    // const sandbox = sinon.createSandbox();
+    // sandbox.stub(request, 'get').yields(null, { body: '' });
+  });
+
+  after(() => {
+    request.get.restore();
+  });
+
+
+
   Object.entries(countriesPostalCodes).forEach(([countryName, countryPostalCodes]) => {
     describe(`Testing get function for ${countryName}`, () => {
       countryPostalCodes.forEach((test) => {
-        identifier.get(test.name, test.zip, (err, region, googleUsed) => {
-          const testTitle = `Validating result for: ${test.name} with zip code: ${test.zip} result: ${region}, error: ${err}, google was used: ${googleUsed}`;
-          it(testTitle, () => {
-            expect(region).to.be.equals(test.result);
-            expect(err).to.be.null;
-            expect(googleUsed).to.be.equals(test.usingGoogle);
-          });
-        });
+        const { name, zip, region, usingGoogle, result } = test;
+        it(
+          `Validating result for: ${name} with zip code: ${zip} result: ${region}, google was used: ${usingGoogle}`,
+          (done) => {
+            try {
+              identifier.get(name, zip, (err, respondeRegion, responseGoogleUsed) => {
+                expect(respondeRegion).to.be.equals(result);
+                expect(err).to.be.null;
+                expect(responseGoogleUsed).to.be.equals(usingGoogle);
+                done();
+              });
+            } catch (error) {
+              done(error);
+            }
+          },
+        );
+      });
+    });
+  });
+
+  describe('Google Maps API', () => {
+    it('should call Google Maps API', (done) => {
+      const countryIso = Country.ISOcodes('DEU', 'ISO3');
+
+      identifier.detectWithGoogle(countryIso, '81371', (err, region, googleUsed) => {
+        try {
+          expect(err).to.be.null;
+          expect(region).to.be.equals('DE-BY');
+          expect(googleUsed).to.be.true;
+          done();
+        } catch (error) {
+          done(error);
+        }
       });
     });
   });
