@@ -168,6 +168,11 @@ const countriesPostalCodes = {
     zip: '41121',
     result: 'IT-45',
     usingGoogle: false,
+  }, {
+    name: 'ITA',
+    zip: '15121',
+    result: 'IT-21',
+    usingGoogle: false,
   }],
   'Netherlands': [{
     name: 'NLD',
@@ -357,9 +362,9 @@ describe('REGION IDENTIFIER', () => {
   Object.entries(countriesPostalCodes).forEach(([countryName, countryPostalCodes]) => {
     describe(`Testing get function for ${countryName}`, () => {
       countryPostalCodes.forEach((test) => {
-        const { name, zip, region, usingGoogle, result } = test;
+        const { name, zip, usingGoogle, result } = test;
         it(
-          `Validating result for: ${name} with zip code: ${zip} result: ${region}, google was used: ${usingGoogle}`,
+          `Validating result for: ${name} with zip code: ${zip} result: ${result}, google was used: ${usingGoogle}`,
           (done) => {
             try {
               identifier.get(name, zip, (err, respondeRegion, responseGoogleUsed) => {
