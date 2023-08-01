@@ -1,97 +1,107 @@
 [
   {
-    "region": "FI-01",
-    "low": 22010,
-    "high": 22999
-  },
-  {
-    "region": "FI-02",
-    "low": 53000,
-    "high": 54999
-  },
-  {
-    "region": "FI-03",
-    "low": 60000,
-    "high": 69999
-  },
-  {
-    "region": "FI-04",
-    "low": 50000,
-    "high": 59999
-  },
-  {
-    "region": "FI-05",
-    "low": 87000,
-    "high": 89999
-  },
-  {
-    "region": "FI-06",
-    "low": 12000,
-    "high": 13999
-  },
-  {
-    "region": "FI-07",
-    "low": 68000,
-    "high": 68999
-  },
-  {
-    "region": "FI-08",
-    "low": 40000,
-    "high": 49999
-  },
-  {
-    "region": "FI-09",
-    "low": 45000,
-    "high": 45999
-  },
-  {
-    "region": "FI-10",
-    "low": 96000,
-    "high": 99999
-  },
-  {
-    "region": "FI-11",
-    "low": 33000,
-    "high": 33999
-  },
-  {
-    "region": "FI-12",
-    "low": 66000,
-    "high": 66999
+    "region": "FI-22",
+    "low": 22100,
+    "high": 22980
   },
   {
     "region": "FI-13",
-    "low": 80000,
-    "high": 89999
+    "low": 13100,
+    "high": 15300
   },
   {
-    "region": "FI-14",
-    "low": 87000,
-    "high": 89999
+    "region": "FI-05",
+    "low": 50100,
+    "high": 80999
   },
   {
     "region": "FI-15",
-    "low": 70000,
-    "high": 79999
+    "low": 13600,
+    "high": 14930
   },
   {
-    "region": "FI-16",
-    "low": 15000,
-    "high": 19999
+    "region": "FI-09",
+    "low": 96300,
+    "high": 99980
+  },
+  {
+    "region": "FI-02",
+    "low": 67700,
+    "high": 70999
+  },
+  {
+    "region": "FI-07",
+    "low": 70100,
+    "high": 74999
   },
   {
     "region": "FI-17",
-    "low": 27000,
-    "high": 27999
-  },
-  {
-    "region": "FI-18",
-    "low": 0,
-    "high": 9999
+    "low": 33100,
+    "high": 36899
   },
   {
     "region": "FI-19",
-    "low": 20000,
-    "high": 29999
+    "low": 29600,
+    "high": 31999
+  },
+  {
+    "region": "FI-04",
+    "low": 53100,
+    "high": 55999
+  },
+  {
+    "region": "FI-03",
+    "low": 60100,
+    "high": 63999
+  },
+  {
+    "region": "FI-01",
+    "low": 100,
+    "high": 2999
+  },
+  {
+    "region": "FI-06",
+    "low": 13110,
+    "high": 13199
+  },
+  {
+    "region": "FI-02",
+    "low": 90540,
+    "high": 90999
+  },
+  {
+    "region": "FI-01",
+    "low": 500,
+    "high": 999
+  },
+  {
+    "region": "FI-13",
+    "low": 13610,
+    "high": 13699
+  },
+  {
+    "region": "FI-07",
+    "low": 70700,
+    "high": 70999
+  },
+  {
+    "region": "FI-09",
+    "low": 99800,
+    "high": 99980
+  },
+  {
+    "region": "FI-03",
+    "low": 63100,
+    "high": 63999
+  },
+  {
+    "region": "FI-01",
+    "low": 3000,
+    "high": 3999
+  },
+  {
+    "region": "FI-01",
+    "low": 0,
+    "high": 499
   }
 ]
