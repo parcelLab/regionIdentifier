@@ -1,5 +1,6 @@
+const { expect } = require('chai');
+
 const RegionIdentifier = require('../lib/region');
-const expect = require('chai').expect;
 
 const identifier = new RegionIdentifier('<API KEY>');
 
@@ -323,15 +324,13 @@ const countriesPostalCodes = {
 
 describe('REGION IDENTIFIER', () => {
   Object.entries(countriesPostalCodes).forEach(([countryName, countryPostalCodes]) => {
-    describe(`Testing get function for ${countryName}`, () => {
-      countryPostalCodes.forEach((test) => {
-        identifier.get(test.name, test.zip, (err, region, googleUsed) => {
-          const testTitle = `Validating result for: ${test.name} with zip code: ${test.zip} result: ${region}, error: ${err}, google was used: ${googleUsed}`;
-          it(testTitle, () => {
-            expect(region).to.be.equals(test.result);
-            expect(err).to.be.null;
-            expect(googleUsed).to.be.equals(test.usingGoogle);
-          });
+    describe(`get() for ${countryName}`, () => {
+      countryPostalCodes.forEach(async (test) => {
+        const [region, googleUsed] = await identifier.get(test.name, test.zip);
+
+        it(`result for: ${test.name} with zip code: ${test.zip} result: ${region}, google was used: ${googleUsed}`, () => {
+          expect(region).to.be.equals(test.result);
+          expect(googleUsed).to.be.equals(test.usingGoogle);
         });
       });
     });
