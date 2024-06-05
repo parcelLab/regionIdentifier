@@ -1,6 +1,6 @@
 {
   "name": "region_identifier",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Gets the name of the region depending of the country and zip code.",
   "main": "index.js",
   "repository": {
@@ -22,8 +22,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "countryjs": "github:parcellab/countryjs",
-    "request": "^2.88.2"
+    "axios": "^1.7.2",
+    "countryjs": "github:parcellab/countryjs"
   },
   "devDependencies": {
     "@parcellab/eslint-config": "^0.5.5",

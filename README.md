@@ -37,23 +37,35 @@ Link to more information about **CC BY 3.0** http://creativecommons.org/licenses
 
 #### Basic:
 ```javascript
-const RegionIdentifier = requrie('regionIdentifier');
+const { RegionIdentifier } = requrie('regionIdentifier');
 const identifier = new RegionIdentifier('<GOOGLE API KEY>');
 ```
 #### Get region:
 ```javascript
 //Using country name
-identifier.get('Deutschland', '6578', function(err, region) {
-    console.log(err, region); // null DE-TH
-});
+identifier.get('Deutschland', '6578')
+    .then(([region, googleUsed])) => {
+        console.log(region); // null DE-TH
+    }
+    .catch((err) => {
+        console.error(err);
+    });
 
 //using ISO3 code
-identifier.get('DEU', '6578', function(err, region) {
-    console.log(err, region); // null DE-TH
-});
+identifier.get('DEU', '6578')
+    .then(([region, googleUsed])) => {
+        console.log(region); // null DE-TH
+    }
+    .catch((err) => {
+        console.error(err);
+    });
 
 //using ISO2 code
-identifier.get('DE', '6578', function(err, region) {
-    console.log(err, region); // null DE-TH
-});
+identifier.get('DE', '6578')
+    .then(([region, googleUsed])) => {
+        console.log(region); // null DE-TH
+    }
+    .catch((err) => {
+        console.error(err);
+    });
 ```
