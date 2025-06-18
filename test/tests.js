@@ -319,6 +319,16 @@ const countriesPostalCodes = {
     zip: '22100',
     result: 'FI-01',
     usingGoogle: false,
+  },{
+    name: 'AUS',
+    zip: '0841',
+    result: 'AU-NT',
+    usingGoogle: false,
+  },{
+    name: 'AUS',
+    zip: '2111',
+    result: 'AU-NSW',
+    usingGoogle: false,
   }],
 };
 
