@@ -1,6 +1,6 @@
 {
   "name": "region_identifier",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Gets the name of the region depending of the country and zip code.",
   "main": "index.js",
   "repository": {
