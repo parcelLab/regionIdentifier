@@ -21,6 +21,7 @@ Utility module that provides an easy way to identify the region of the country d
 - MEX
 - NLD
 - RUS
+- SRB
 - SWE
 - USA
 
