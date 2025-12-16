@@ -206,6 +206,27 @@ const countriesPostalCodes = {
     result: 'MX-CMX',
     usingGoogle: false,
   }],
+  'Serbia': [{
+    name: 'SRB',
+    zip: '11000',
+    result: 'RS-00',
+    usingGoogle: false,
+  }, {
+    name: 'SRB',
+    zip: '11320',
+    result: 'RS-10',
+    usingGoogle: false,
+  }, {
+    name: 'SRB',
+    zip: '18230',
+    result: 'RS-15',
+    usingGoogle: false,
+  }, {
+    name: 'SRB',
+    zip: '24430',
+    result: 'RS-03',
+    usingGoogle: false,
+  }],
   'United States': [{
     name: 'USA',
     zip: '972022239',
