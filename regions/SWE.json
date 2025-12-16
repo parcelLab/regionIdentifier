@@ -1,1 +1,107 @@
-[{"region":"SE-AB","low":10000,"high":19999},{"region":"SE-AC","low":90000,"high":92999},{"region":"SE-BD","low":93000,"high":99999},{"region":"SE-C","low":75000,"high":81999},{"region":"SE-D","low":61000,"high":69999},{"region":"SE-E","low":58000,"high":61999},{"region":"SE-F","low":55000,"high":58999},{"region":"SE-G","low":34000,"high":36999},{"region":"SE-H","low":39000,"high":45999},{"region":"SE-I","low":62000,"high":62999},{"region":"SE-K","low":37000,"high":45999},{"region":"SE-M","low":20000,"high":29999},{"region":"SE-N","low":30000,"high":33999},{"region":"SE-O","low":40000,"high":53999},{"region":"SE-S","low":65000,"high":68999},{"region":"SE-T","low":70000,"high":74999},{"region":"SE-U","low":72000,"high":73999},{"region":"SE-W","low":78000,"high":81999},{"region":"SE-X","low":80000,"high":82999},{"region":"SE-Y","low":87000,"high":89999},{"region":"SE-Z","low":83000,"high":86999}]
+[
+	{
+		"region": "SE-AB",
+		"low": 10000,
+		"high": 19999
+	},
+	{
+		"region": "SE-AC",
+		"low": 90000,
+		"high": 92999
+	},
+	{
+		"region": "SE-BD",
+		"low": 93000,
+		"high": 99999
+	},
+	{
+		"region": "SE-C",
+		"low": 75000,
+		"high": 81999
+	},
+	{
+		"region": "SE-D",
+		"low": 61000,
+		"high": 69999
+	},
+	{
+		"region": "SE-E",
+		"low": 58000,
+		"high": 61999
+	},
+	{
+		"region": "SE-F",
+		"low": 55000,
+		"high": 58999
+	},
+	{
+		"region": "SE-G",
+		"low": 34000,
+		"high": 36999
+	},
+	{
+		"region": "SE-H",
+		"low": 39000,
+		"high": 45999
+	},
+	{
+		"region": "SE-I",
+		"low": 62000,
+		"high": 62999
+	},
+	{
+		"region": "SE-K",
+		"low": 37000,
+		"high": 45999
+	},
+	{
+		"region": "SE-M",
+		"low": 20000,
+		"high": 29999
+	},
+	{
+		"region": "SE-N",
+		"low": 30000,
+		"high": 33999
+	},
+	{
+		"region": "SE-O",
+		"low": 40000,
+		"high": 53999
+	},
+	{
+		"region": "SE-S",
+		"low": 65000,
+		"high": 68999
+	},
+	{
+		"region": "SE-T",
+		"low": 70000,
+		"high": 74999
+	},
+	{
+		"region": "SE-U",
+		"low": 72000,
+		"high": 73999
+	},
+	{
+		"region": "SE-W",
+		"low": 78000,
+		"high": 81999
+	},
+	{
+		"region": "SE-X",
+		"low": 80000,
+		"high": 82999
+	},
+	{
+		"region": "SE-Y",
+		"low": 87000,
+		"high": 89999
+	},
+	{
+		"region": "SE-Z",
+		"low": 83000,
+		"high": 86999
+	}
+]
