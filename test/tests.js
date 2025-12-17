@@ -226,6 +226,16 @@ const countriesPostalCodes = {
     zip: '24430',
     result: 'RS-03',
     usingGoogle: false,
+  }, {
+    name: 'SRB',
+    zip: '21000',
+    result: 'RS-VO',
+    usingGoogle: false,
+  }, {
+    name: 'SRB',
+    zip: '38000',
+    result: 'RS-KM',
+    usingGoogle: false,
   }],
   'United States': [{
     name: 'USA',
