@@ -28,7 +28,7 @@
   "devDependencies": {
     "@parcellab/eslint-config": "^0.5.5",
     "chai": "^3.4.1",
-    "mocha": "^9.2.2"
+    "mocha": "^11.7.5"
   },
   "overrides": {
     "eslint-plugin-unicorn": "47.0.0"
