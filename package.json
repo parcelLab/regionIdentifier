@@ -29,5 +29,8 @@
     "@parcellab/eslint-config": "^0.5.5",
     "chai": "^3.4.1",
     "mocha": "^9.2.2"
+  },
+  "overrides": {
+    "eslint-plugin-unicorn": "47.0.0"
   }
 }
