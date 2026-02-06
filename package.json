@@ -21,6 +21,9 @@
     "test": "mocha test",
     "lint": "eslint ."
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "axios": "^1.7.9",
     "countryjs": "github:parcellab/countryjs"
