@@ -1,0 +1,558 @@
+[
+  {
+    "low": "F12",
+    "region": "IE-C"
+  },
+  {
+    "low": "F23",
+    "region": "IE-C"
+  },
+  {
+    "low": "F26",
+    "region": "IE-C"
+  },
+  {
+    "low": "F28",
+    "region": "IE-C"
+  },
+  {
+    "low": "F31",
+    "region": "IE-C"
+  },
+  {
+    "low": "F35",
+    "region": "IE-C"
+  },
+  {
+    "low": "F42",
+    "region": "IE-C"
+  },
+  {
+    "low": "F45",
+    "region": "IE-C"
+  },
+  {
+    "low": "F52",
+    "region": "IE-C"
+  },
+  {
+    "low": "F56",
+    "region": "IE-C"
+  },
+  {
+    "low": "F91",
+    "region": "IE-C"
+  },
+  {
+    "low": "H53",
+    "region": "IE-C"
+  },
+  {
+    "low": "H54",
+    "region": "IE-C"
+  },
+  {
+    "low": "H62",
+    "region": "IE-C"
+  },
+  {
+    "low": "H65",
+    "region": "IE-C"
+  },
+  {
+    "low": "H71",
+    "region": "IE-C"
+  },
+  {
+    "low": "H91",
+    "region": "IE-C"
+  },
+  {
+    "low": "N41",
+    "region": "IE-C"
+  },
+  {
+    "low": "A41",
+    "region": "IE-L"
+  },
+  {
+    "low": "A42",
+    "region": "IE-L"
+  },
+  {
+    "low": "A45",
+    "region": "IE-L"
+  },
+  {
+    "low": "A63",
+    "region": "IE-L"
+  },
+  {
+    "low": "A67",
+    "region": "IE-L"
+  },
+  {
+    "low": "A82",
+    "region": "IE-L"
+  },
+  {
+    "low": "A83",
+    "region": "IE-L"
+  },
+  {
+    "low": "A84",
+    "region": "IE-L"
+  },
+  {
+    "low": "A85",
+    "region": "IE-L"
+  },
+  {
+    "low": "A86",
+    "region": "IE-L"
+  },
+  {
+    "low": "A91",
+    "region": "IE-L"
+  },
+  {
+    "low": "A92",
+    "region": "IE-L"
+  },
+  {
+    "low": "A94",
+    "region": "IE-L"
+  },
+  {
+    "low": "A96",
+    "region": "IE-L"
+  },
+  {
+    "low": "A98",
+    "region": "IE-L"
+  },
+  {
+    "low": "C15",
+    "region": "IE-L"
+  },
+  {
+    "low": "D01",
+    "region": "IE-L"
+  },
+  {
+    "low": "D02",
+    "region": "IE-L"
+  },
+  {
+    "low": "D03",
+    "region": "IE-L"
+  },
+  {
+    "low": "D04",
+    "region": "IE-L"
+  },
+  {
+    "low": "D05",
+    "region": "IE-L"
+  },
+  {
+    "low": "D06",
+    "region": "IE-L"
+  },
+  {
+    "low": "D07",
+    "region": "IE-L"
+  },
+  {
+    "low": "D08",
+    "region": "IE-L"
+  },
+  {
+    "low": "D09",
+    "region": "IE-L"
+  },
+  {
+    "low": "D10",
+    "region": "IE-L"
+  },
+  {
+    "low": "D11",
+    "region": "IE-L"
+  },
+  {
+    "low": "D12",
+    "region": "IE-L"
+  },
+  {
+    "low": "D13",
+    "region": "IE-L"
+  },
+  {
+    "low": "D14",
+    "region": "IE-L"
+  },
+  {
+    "low": "D15",
+    "region": "IE-L"
+  },
+  {
+    "low": "D16",
+    "region": "IE-L"
+  },
+  {
+    "low": "D17",
+    "region": "IE-L"
+  },
+  {
+    "low": "D18",
+    "region": "IE-L"
+  },
+  {
+    "low": "D20",
+    "region": "IE-L"
+  },
+  {
+    "low": "D22",
+    "region": "IE-L"
+  },
+  {
+    "low": "D24",
+    "region": "IE-L"
+  },
+  {
+    "low": "D6W",
+    "region": "IE-L"
+  },
+  {
+    "low": "K32",
+    "region": "IE-L"
+  },
+  {
+    "low": "K34",
+    "region": "IE-L"
+  },
+  {
+    "low": "K36",
+    "region": "IE-L"
+  },
+  {
+    "low": "K45",
+    "region": "IE-L"
+  },
+  {
+    "low": "K56",
+    "region": "IE-L"
+  },
+  {
+    "low": "K67",
+    "region": "IE-L"
+  },
+  {
+    "low": "K78",
+    "region": "IE-L"
+  },
+  {
+    "low": "N37",
+    "region": "IE-L"
+  },
+  {
+    "low": "N39",
+    "region": "IE-L"
+  },
+  {
+    "low": "N91",
+    "region": "IE-L"
+  },
+  {
+    "low": "P14",
+    "region": "IE-L"
+  },
+  {
+    "low": "R14",
+    "region": "IE-L"
+  },
+  {
+    "low": "R21",
+    "region": "IE-L"
+  },
+  {
+    "low": "R32",
+    "region": "IE-L"
+  },
+  {
+    "low": "R35",
+    "region": "IE-L"
+  },
+  {
+    "low": "R42",
+    "region": "IE-L"
+  },
+  {
+    "low": "R45",
+    "region": "IE-L"
+  },
+  {
+    "low": "R51",
+    "region": "IE-L"
+  },
+  {
+    "low": "R56",
+    "region": "IE-L"
+  },
+  {
+    "low": "R93",
+    "region": "IE-L"
+  },
+  {
+    "low": "R95",
+    "region": "IE-L"
+  },
+  {
+    "low": "W12",
+    "region": "IE-L"
+  },
+  {
+    "low": "W23",
+    "region": "IE-L"
+  },
+  {
+    "low": "W34",
+    "region": "IE-L"
+  },
+  {
+    "low": "W91",
+    "region": "IE-L"
+  },
+  {
+    "low": "Y14",
+    "region": "IE-L"
+  },
+  {
+    "low": "Y21",
+    "region": "IE-L"
+  },
+  {
+    "low": "Y25",
+    "region": "IE-L"
+  },
+  {
+    "low": "Y34",
+    "region": "IE-L"
+  },
+  {
+    "low": "Y35",
+    "region": "IE-L"
+  },
+  {
+    "low": "E21",
+    "region": "IE-M"
+  },
+  {
+    "low": "E25",
+    "region": "IE-M"
+  },
+  {
+    "low": "E32",
+    "region": "IE-M"
+  },
+  {
+    "low": "E34",
+    "region": "IE-M"
+  },
+  {
+    "low": "E41",
+    "region": "IE-M"
+  },
+  {
+    "low": "E45",
+    "region": "IE-M"
+  },
+  {
+    "low": "E53",
+    "region": "IE-M"
+  },
+  {
+    "low": "E91",
+    "region": "IE-M"
+  },
+  {
+    "low": "P12",
+    "region": "IE-M"
+  },
+  {
+    "low": "P17",
+    "region": "IE-M"
+  },
+  {
+    "low": "P24",
+    "region": "IE-M"
+  },
+  {
+    "low": "P25",
+    "region": "IE-M"
+  },
+  {
+    "low": "P31",
+    "region": "IE-M"
+  },
+  {
+    "low": "P32",
+    "region": "IE-M"
+  },
+  {
+    "low": "P36",
+    "region": "IE-M"
+  },
+  {
+    "low": "P43",
+    "region": "IE-M"
+  },
+  {
+    "low": "P47",
+    "region": "IE-M"
+  },
+  {
+    "low": "P51",
+    "region": "IE-M"
+  },
+  {
+    "low": "P56",
+    "region": "IE-M"
+  },
+  {
+    "low": "P61",
+    "region": "IE-M"
+  },
+  {
+    "low": "P67",
+    "region": "IE-M"
+  },
+  {
+    "low": "P72",
+    "region": "IE-M"
+  },
+  {
+    "low": "P75",
+    "region": "IE-M"
+  },
+  {
+    "low": "P81",
+    "region": "IE-M"
+  },
+  {
+    "low": "P85",
+    "region": "IE-M"
+  },
+  {
+    "low": "T12",
+    "region": "IE-M"
+  },
+  {
+    "low": "T23",
+    "region": "IE-M"
+  },
+  {
+    "low": "T34",
+    "region": "IE-M"
+  },
+  {
+    "low": "T45",
+    "region": "IE-M"
+  },
+  {
+    "low": "T56",
+    "region": "IE-M"
+  },
+  {
+    "low": "V14",
+    "region": "IE-M"
+  },
+  {
+    "low": "V15",
+    "region": "IE-M"
+  },
+  {
+    "low": "V23",
+    "region": "IE-M"
+  },
+  {
+    "low": "V31",
+    "region": "IE-M"
+  },
+  {
+    "low": "V35",
+    "region": "IE-M"
+  },
+  {
+    "low": "V42",
+    "region": "IE-M"
+  },
+  {
+    "low": "V92",
+    "region": "IE-M"
+  },
+  {
+    "low": "V93",
+    "region": "IE-M"
+  },
+  {
+    "low": "V94",
+    "region": "IE-M"
+  },
+  {
+    "low": "V95",
+    "region": "IE-M"
+  },
+  {
+    "low": "X35",
+    "region": "IE-M"
+  },
+  {
+    "low": "X42",
+    "region": "IE-M"
+  },
+  {
+    "low": "X91",
+    "region": "IE-M"
+  },
+  {
+    "low": "A75",
+    "region": "IE-U"
+  },
+  {
+    "low": "A81",
+    "region": "IE-U"
+  },
+  {
+    "low": "F92",
+    "region": "IE-U"
+  },
+  {
+    "low": "F93",
+    "region": "IE-U"
+  },
+  {
+    "low": "F94",
+    "region": "IE-U"
+  },
+  {
+    "low": "H12",
+    "region": "IE-U"
+  },
+  {
+    "low": "H14",
+    "region": "IE-U"
+  },
+  {
+    "low": "H16",
+    "region": "IE-U"
+  },
+  {
+    "low": "H18",
+    "region": "IE-U"
+  },
+  {
+    "low": "H23",
+    "region": "IE-U"
+  }
+]
