@@ -8,6 +8,7 @@ Utility module that provides an easy way to identify the region of the country d
 * https://download.geonames.org/export/zip/ - all the Geoname files for download (see below)
 
 #### Predefined Regions
+- AUS
 - AUT
 - BEL
 - CAN
@@ -17,10 +18,15 @@ Utility module that provides an easy way to identify the region of the country d
 - FIN
 - FRA
 - GBR
+- HUN
+- IND
+- IRL
 - ITA
+- JPN
 - MEX
 - NLD
 - RUS
+- ROU
 - SRB
 - SWE
 - USA

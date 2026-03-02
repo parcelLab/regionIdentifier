@@ -153,6 +153,41 @@ const countriesPostalCodes = {
     result: 'IT-45',
     usingGoogle: false,
   }],
+  'India': [{
+    name: 'IND',
+    zip: '110001',
+    result: 'IN-DL',
+    usingGoogle: false,
+  }],
+  'Ireland': [{
+    name: 'IRL',
+    zip: 'D02 X285',
+    result: 'IE-L',
+    usingGoogle: false,
+  }],
+  'Romania': [{
+    name: 'ROU',
+    zip: '010011',
+    result: 'RO-B',
+    usingGoogle: false,
+  }],
+  'Hungary': [{
+    name: 'HUN',
+    zip: '1011',
+    result: 'HU-BU',
+    usingGoogle: false,
+  }],
+  'Japan': [{
+    name: 'JPN',
+    zip: '100-0001',
+    result: 'JP-13',
+    usingGoogle: false,
+  }, {
+    name: 'JPN',
+    zip: '530-0001',
+    result: 'JP-27',
+    usingGoogle: false,
+  }],
   'Netherlands': [{
     name: 'NLD',
     zip: '3541',
