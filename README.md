@@ -10,6 +10,7 @@ Utility module that provides an easy way to identify the region of the country d
 #### Predefined Regions
 - AUS
 - AUT
+- BRA
 - BEL
 - CAN
 - CHE
@@ -23,12 +24,18 @@ Utility module that provides an easy way to identify the region of the country d
 - IRL
 - ITA
 - JPN
+- KOR
+- LTU
+- LUX
 - MEX
 - NLD
+- PRT
 - RUS
 - ROU
+- SVK
 - SRB
 - SWE
+- TUR
 - USA
 
 ## Test
