@@ -188,6 +188,48 @@ const countriesPostalCodes = {
     result: 'JP-27',
     usingGoogle: false,
   }],
+  'Brazil': [{
+    name: 'BRA',
+    zip: '69900-000',
+    result: 'BR-AC',
+    usingGoogle: false,
+  }],
+  'South Korea': [{
+    name: 'KOR',
+    zip: '01000',
+    result: 'KR-11',
+    usingGoogle: false,
+  }],
+  'Lithuania': [{
+    name: 'LTU',
+    zip: '62001',
+    result: 'LT-03',
+    usingGoogle: false,
+  }],
+  'Luxembourg': [{
+    name: 'LUX',
+    zip: 'L-4795',
+    result: 'LU-CA',
+    usingGoogle: false,
+  }],
+  'Portugal': [{
+    name: 'PRT',
+    zip: '3020-740',
+    result: 'PT-01',
+    usingGoogle: false,
+  }],
+  'Slovakia': [{
+    name: 'SVK',
+    zip: '049 01',
+    result: 'SK-BC',
+    usingGoogle: false,
+  }],
+  'Turkey': [{
+    name: 'TUR',
+    zip: '01010',
+    result: 'TR-01',
+    usingGoogle: false,
+  }],
   'Netherlands': [{
     name: 'NLD',
     zip: '3541',
