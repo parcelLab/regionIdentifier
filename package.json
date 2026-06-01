@@ -33,7 +33,7 @@
     "chai": "^6.2.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
-    "mocha": "^11.7.5"
+    "mocha": "^11.7.6"
   },
   "overrides": {
     "eslint-plugin-unicorn": "47.0.0",
