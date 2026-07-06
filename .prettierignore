@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+
+# Generated/large data files: keep existing formatting to avoid noisy diffs.
+country/**/*.json
+regionNames/**/*.json
+regions/**/*.json
