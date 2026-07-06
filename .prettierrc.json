@@ -3,5 +3,13 @@
   "semi": true,
   "trailingComma": "all",
   "quoteProps": "consistent",
-  "printWidth": 100
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
 }
