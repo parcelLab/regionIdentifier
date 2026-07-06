@@ -1,4 +1,5 @@
-const { expect } = require('chai');
+const assert = require('node:assert/strict');
+const { describe, it } = require('node:test');
 
 const RegionIdentifier = require('../lib/region');
 
@@ -443,12 +444,12 @@ const countriesPostalCodes = {
 describe('REGION IDENTIFIER', () => {
   Object.entries(countriesPostalCodes).forEach(([countryName, countryPostalCodes]) => {
     describe(`get() for ${countryName}`, () => {
-      countryPostalCodes.forEach(async (test) => {
-        const [region, googleUsed] = await identifier.get(test.name, test.zip);
+      countryPostalCodes.forEach((test) => {
+        it(`result for: ${test.name} with zip code: ${test.zip}`, async () => {
+          const [region, googleUsed] = await identifier.get(test.name, test.zip);
 
-        it(`result for: ${test.name} with zip code: ${test.zip} result: ${region}, google was used: ${googleUsed}`, () => {
-          expect(region).to.be.equals(test.result);
-          expect(googleUsed).to.be.equals(test.usingGoogle);
+          assert.equal(region, test.result);
+          assert.equal(googleUsed, test.usingGoogle);
         });
       });
     });
