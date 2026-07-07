@@ -9,12 +9,21 @@ const RegionIdentifier = require('../lib/region');
 const ISO3_PATTERN = /^[A-Z]{3}$/;
 const NUMERIC_VALUE_PATTERN = /^\d+$/;
 const ZIP_CODE_FORMATS = new Set(['numeric', 'alpha']);
+const KNOWN_UNUSED_REGION_NAMES = new Map([
+  ['AUT', new Map([['AT-8', 'legacy region-name entry not currently returned by mappings']])],
+  ['BEL', new Map([['BE-VGL', 'legacy compatibility alias; mappings return BE-VLG']])],
+]);
 
 const rootDirectory = path.join(__dirname, '..');
 const errors = [];
+const warnings = [];
 
 function addError(message) {
   errors.push(message);
+}
+
+function addWarning(message) {
+  warnings.push(message);
 }
 const isPlainObject = (value) =>
   value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -22,6 +31,8 @@ const isPositiveInteger = (value) => Number.isSafeInteger(value) && value > 0;
 const isNumericValue = (value) =>
   (typeof value === 'number' && Number.isFinite(value)) ||
   (typeof value === 'string' && NUMERIC_VALUE_PATTERN.test(value));
+const isCoordinateValue = (value) =>
+  (typeof value === 'number' && Number.isFinite(value)) || typeof value === 'string';
 const sortedValues = (values) =>
   [...values].toSorted((firstValue, secondValue) => firstValue.localeCompare(secondValue));
 
@@ -125,6 +136,31 @@ function validateRegionNames(isoCode, regionNames) {
   }
 }
 
+/** Warns about display names that are not returned by current region mappings. */
+function warnAboutUnusedRegionNames(isoCode, regionNames, regionMappings) {
+  const mappedRegionCodes = new Set(
+    regionMappings
+      .filter((entry) => isPlainObject(entry) && typeof entry.region === 'string')
+      .map((entry) => entry.region),
+  );
+  const knownUnusedRegionNames = KNOWN_UNUSED_REGION_NAMES.get(isoCode) ?? new Map();
+
+  const sortedRegionCodes = sortedValues(Object.keys(regionNames));
+
+  for (const regionCode of sortedRegionCodes) {
+    if (mappedRegionCodes.has(regionCode)) {
+      continue;
+    }
+
+    const knownReason = knownUnusedRegionNames.get(regionCode);
+    const message = knownReason
+      ? `regionNames/${isoCode}.json: known unused region name "${regionCode}" (${knownReason})`
+      : `regionNames/${isoCode}.json: unused region name "${regionCode}" is not returned by regions/${isoCode}.json`;
+
+    addWarning(message);
+  }
+}
+
 /** Validates one regions/*.json entry; empty lists are allowed placeholders. */
 function validateRegionMappingEntry({ isoCode, entry, index, regionNames, countryConfig }) {
   const location = `regions/${isoCode}.json[${index}]`;
@@ -161,19 +197,36 @@ function validateRegionMappingEntry({ isoCode, entry, index, regionNames, countr
     addError(`${location}: high requires low`);
   }
 
-  if (countryConfig?.zipCodeFormat !== 'numeric') {
-    return;
+  // Exact low-only mappings are compared against the cleaned zip string with strict equality.
+  if (hasLow && !hasHigh && typeof entry.low !== 'string') {
+    addError(`${location}: low must be a string when high is omitted`);
   }
 
-  // Numeric country configs compare low/high/list values as numbers.
-  for (const key of ['low', 'high']) {
-    if (Object.hasOwn(entry, key) && !isNumericValue(entry[key])) {
-      addError(`${location}: ${key} must be numeric for numeric country config`);
+  // Range mappings compare parseInt(zip) to low/high, regardless of zipCodeFormat.
+  if (hasHigh) {
+    for (const key of ['low', 'high']) {
+      if (!isNumericValue(entry[key])) {
+        addError(`${location}: ${key} must be numeric for range mappings`);
+      }
+    }
+
+    // Reversed ranges would never match correctly.
+    if (isNumericValue(entry.low) && isNumericValue(entry.high)) {
+      const low = Number(entry.low);
+      const high = Number(entry.high);
+
+      if (low > high) {
+        addError(`${location}: low must not be greater than high`);
+      }
     }
   }
 
-  // Numeric lists are also used for exact matches and prefix checks.
-  if (Array.isArray(entry.list)) {
+  if (!Array.isArray(entry.list)) {
+    return;
+  }
+
+  if (countryConfig?.zipCodeFormat === 'numeric') {
+    // Numeric lists are used for exact matches and prefix checks.
     for (const [listIndex, value] of entry.list.entries()) {
       if (!isNumericValue(value)) {
         addError(
@@ -181,15 +234,14 @@ function validateRegionMappingEntry({ isoCode, entry, index, regionNames, countr
         );
       }
     }
-  }
-
-  // Reversed ranges would never match correctly.
-  if (hasLow && hasHigh && isNumericValue(entry.low) && isNumericValue(entry.high)) {
-    const low = Number(entry.low);
-    const high = Number(entry.high);
-
-    if (low > high) {
-      addError(`${location}: low must not be greater than high`);
+  } else {
+    // Non-numeric lists are matched against the cleaned zip string.
+    for (const [listIndex, value] of entry.list.entries()) {
+      if (typeof value !== 'string' || value.length === 0) {
+        addError(
+          `${location}.list[${listIndex}]: value must be a non-empty string for non-numeric country config`,
+        );
+      }
     }
   }
 }
@@ -210,6 +262,26 @@ function validateArrayFile(relativePath, value, { allowEmpty = true } = {}) {
   return true;
 }
 
+/** Validates one geocode/*.json entry without judging legacy coordinate quality. */
+function validateGeocodeMappingEntry({ isoCode, entry, index }) {
+  const location = `geocode/${isoCode}.json[${index}]`;
+
+  if (!isPlainObject(entry)) {
+    addError(`${location}: expected an object`);
+    return;
+  }
+
+  if (typeof entry.zip !== 'string' || entry.zip.length === 0) {
+    addError(`${location}: zip must be a non-empty string`);
+  }
+
+  for (const key of ['latitude', 'longitude']) {
+    if (!isCoordinateValue(entry[key])) {
+      addError(`${location}: ${key} must be a string or finite number`);
+    }
+  }
+}
+
 /** Validates all static region lookup data for one country. */
 function validateRegionData(isoCode) {
   const countryConfig = readJson(`country/${isoCode}.json`);
@@ -227,6 +299,7 @@ function validateRegionData(isoCode) {
     regionMappings.forEach((entry, index) => {
       validateRegionMappingEntry({ isoCode, entry, index, regionNames, countryConfig });
     });
+    warnAboutUnusedRegionNames(isoCode, regionNames, regionMappings);
   }
 }
 
@@ -234,13 +307,23 @@ function validateRegionData(isoCode) {
 function validateGeocodeData(isoCode) {
   const geocodeMappings = readJson(`geocode/${isoCode}.json`);
 
-  if (geocodeMappings) {
-    validateArrayFile(`geocode/${isoCode}.json`, geocodeMappings);
+  if (validateArrayFile(`geocode/${isoCode}.json`, geocodeMappings)) {
+    geocodeMappings.forEach((entry, index) => {
+      validateGeocodeMappingEntry({ isoCode, entry, index });
+    });
   }
 }
 
-/** Prints all collected errors or a short success summary. */
+/** Prints all collected errors, warnings, or a short success summary. */
 function printResult(dataIsoCodes) {
+  if (warnings.length > 0) {
+    console.warn(`Data validation completed with ${warnings.length} warning(s):`);
+
+    for (const warning of warnings) {
+      console.warn(`- ${warning}`);
+    }
+  }
+
   if (errors.length === 0) {
     console.log(`Validated region data for ${dataIsoCodes.regions.size} countries.`);
     console.log(`Validated geocode data for ${dataIsoCodes.geocode.size} countries.`);
@@ -302,6 +385,11 @@ ensureSubset(
   dataIsoCodes.regions,
   dataIsoCodes.regionNames,
   (isoCode) => `regionNames/${isoCode}.json: missing file`,
+);
+ensureSubset(
+  dataIsoCodes.regions,
+  staticIsoCodes,
+  (isoCode) => `lib/region.js availableCountries: missing "${isoCode}"`,
 );
 
 // lib/geocode.js and geocode/*.json must stay in sync in both directions.
