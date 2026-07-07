@@ -37,4 +37,7 @@ for (const code of codes) {
   fs.unlinkSync(path.join(__dirname, `${code}.zip`));
 }
 
-fs.writeFileSync(path.join(__dirname, '..', 'regions', 'USA.json'), JSON.stringify(result, null, 2));
+fs.writeFileSync(
+  path.join(__dirname, '..', 'regions', 'USA.json'),
+  JSON.stringify(result, null, 2),
+);

@@ -18,7 +18,7 @@ identifier
   .catch((err) => {
     console.error(err);
 
-    if(err instanceof GoogleMapsAPIError) {
+    if (err instanceof GoogleMapsAPIError) {
       console.error('Google Maps API error');
     }
   });
