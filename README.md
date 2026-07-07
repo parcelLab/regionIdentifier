@@ -1,14 +1,14 @@
 # Region Identifier
 
-Utility module that provides an easy way to identify the region of the country depending on the postal code, brings a set of determined regions for some of the countries and if it doesn't find a match uses google geolocation API to get the region.
+Utility module that identifies a country's region from a postal code. It first uses the static region mappings bundled in this repository. If no static mapping is available or no static match is found, it falls back to the Google Maps Geocoding API.
 
-_Relevant links:_
+## Relevant links
 
-- https://en.wikipedia.org/wiki/ISO_3166-2 — codes used for all the regions can be found here
-- https://en.wikipedia.org/wiki/Category:Postal_codes_by_country - explanations of postal code structure per country
-- https://download.geonames.org/export/zip/ - all the Geoname files for download (see below)
+- https://en.wikipedia.org/wiki/ISO_3166-2 — region codes used by this package
+- https://en.wikipedia.org/wiki/Category:Postal_codes_by_country — postal-code structure by country
+- https://download.geonames.org/export/zip/ — GeoNames postal-code files
 
-#### Predefined Regions
+## Predefined regions
 
 - AUS
 - AUT
@@ -40,53 +40,65 @@ _Relevant links:_
 - TUR
 - USA
 
-## Test
-
-```sh
-$ npm test
-```
-
-### License
-
-This module was built using adapted information from http://download.geonames.org/ that's registered under the **CC BY 3.0** as well as this module.
-Link to more information about **CC BY 3.0** http://creativecommons.org/licenses/by/3.0/.
-
 ## Usage
 
-#### Basic:
+### Basic setup
 
-```javascript
-const { RegionIdentifier } = requrie('regionIdentifier');
+```js
+const { RegionIdentifier } = require('region_identifier');
+
 const identifier = new RegionIdentifier('<GOOGLE API KEY>');
 ```
 
-#### Get region:
+### Get a region
 
-```javascript
-//Using country name
-identifier.get('Deutschland', '6578')
-    .then(([region, googleUsed])) => {
-        console.log(region); // null DE-TH
-    }
-    .catch((err) => {
-        console.error(err);
-    });
+`get(country, zipCode)` accepts country names, ISO2 codes, or ISO3 codes. It returns a tuple: `[region, googleUsed]`.
 
-//using ISO3 code
-identifier.get('DEU', '6578')
-    .then(([region, googleUsed])) => {
-        console.log(region); // null DE-TH
-    }
-    .catch((err) => {
-        console.error(err);
-    });
+```js
+const { RegionIdentifier } = require('region_identifier');
 
-//using ISO2 code
-identifier.get('DE', '6578')
-    .then(([region, googleUsed])) => {
-        console.log(region); // null DE-TH
-    }
-    .catch((err) => {
-        console.error(err);
-    });
+const identifier = new RegionIdentifier('<GOOGLE API KEY>');
+
+async function main() {
+  const [region, googleUsed] = await identifier.get('DEU', '6578');
+
+  console.log(region); // DE-TH
+  console.log(googleUsed); // false when static data matched, true when Google Maps was used
+}
+
+main().catch(console.error);
 ```
+
+Examples:
+
+```js
+await identifier.get('Deutschland', '6578'); // ['DE-TH', false]
+await identifier.get('DEU', '6578'); // ['DE-TH', false]
+await identifier.get('DE', '6578'); // ['DE-TH', false]
+```
+
+If the static data does not contain a matching region, `get()` uses Google Maps. In that case `googleUsed` is `true`. Google API request failures are thrown as `GoogleMapsAPIError`.
+
+### Get a region display name
+
+```js
+const name = identifier.getNameFromCountryAndRegion('DEU', 'DE-TH');
+
+console.log(name); // Thüringen
+```
+
+## Development
+
+```sh
+npm test
+npm run lint
+npm run format:check
+```
+
+`npm run validate:data` checks consistency between `country/*.json`, `regions/*.json`, `regionNames/*.json`, and the statically supported countries in `lib/region.js`.
+
+See [DATA_REQUIREMENTS.md](./DATA_REQUIREMENTS.md) for the country-data format and checklist.
+
+## License
+
+This module was built using adapted information from http://download.geonames.org/, which is registered under **CC BY 3.0**, as is this module. See http://creativecommons.org/licenses/by/3.0/ for more information.
