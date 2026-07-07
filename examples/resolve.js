@@ -5,20 +5,21 @@ const identifier = new RegionIdentifier('<API KEY>');
 const country = 'DEU';
 const zip = '79761';
 
-identifier
-  .get(country, zip)
-  .then(([region, googleUsed]) => {
+async function resolve() {
+  try {
+    const [region, googleUsed] = await identifier.get(country, zip);
+
     console.log('~~~');
-    console.log('Got' + (googleUsed ? ' w/ Google' : ''));
+    console.log(`Got${googleUsed ? ' w/ Google' : ''}`);
     console.log(region);
     console.log('~~~');
-    return;
-  })
-  // eslint-disable-next-line unicorn/prefer-top-level-await
-  .catch((err) => {
+  } catch (err) {
     console.error(err);
 
     if (err instanceof GoogleMapsAPIError) {
       console.error('Google Maps API error');
     }
-  });
+  }
+}
+
+resolve();
