@@ -18,7 +18,7 @@ for (const code of codes) {
     const state = rawCountry === 'US' ? rawState : rawCountry;
     if (state) {
       const region = `US-${state}`;
-      if (agg[region]) {
+      if (Object.hasOwn(agg, region)) {
         agg[region].push(parseInt(zip, 10));
       } else {
         agg[region] = [parseInt(zip, 10)];
