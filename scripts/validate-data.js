@@ -262,8 +262,8 @@ const dataIsoCodes = {
   regionNames: jsonIsoCodes('regionNames'),
   geocode: jsonIsoCodes('geocode'),
 };
-const staticIsoCodes = RegionIdentifier.availableCountries;
-const geocodeIsoCodes = coordinates.availableCountries;
+const staticIsoCodes = new Set(RegionIdentifier.availableCountries);
+const geocodeIsoCodes = new Set(coordinates.availableCountries);
 
 // Validate country codes from both data file names and runtime allowlists.
 validateIsoSources({
