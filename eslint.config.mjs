@@ -1,7 +1,6 @@
 import js from '@eslint/js';
 import prettierConfig from 'eslint-config-prettier/flat';
 import { flatConfigs as importXConfigs } from 'eslint-plugin-import-x';
-
 import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 
@@ -23,7 +22,6 @@ export default [
       },
     },
     rules: {
-      // Carried over from @parcellab/eslint-config/base.
       'unicorn/catch-error-name': [
         'error',
         {
@@ -43,7 +41,6 @@ export default [
       'unicorn/prefer-top-level-await': 'off',
       'unicorn/prevent-abbreviations': 'off',
 
-      // Existing project-level choices.
       'prefer-const': 'error',
       'unicorn/prefer-module': 'off',
     },
