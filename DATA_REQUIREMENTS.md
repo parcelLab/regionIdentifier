@@ -44,7 +44,7 @@ Additional format notes:
 
 ## 5) Testing
 - Add test cases to `test/tests.js` under `countriesPostalCodes`: include the country ISO/name, a representative zip, expected region code, and set `usingGoogle: false`.
-- Run `npm test` to execute Mocha tests.
+- Run `npm test` to execute the Node.js test runner.
 - Optional: verify pretty-name lookups via `getNameFromCountryAndRegion` using the `regionNames` file.
 
 ## 6) Data quality checklist

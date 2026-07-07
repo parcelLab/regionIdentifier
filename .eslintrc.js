@@ -2,7 +2,6 @@ module.exports = {
   env: {
     commonjs: true,
     node: true,
-    mocha: true,
   },
   extends: ['@parcellab/eslint-config/base'],
   rules: {
