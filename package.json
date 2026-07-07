@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/parcelLab/regionIdentifier",
   "scripts": {
-    "test": "node --test \"test/**/*.js\"",
+    "test": "node --test",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
