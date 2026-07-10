@@ -93,9 +93,10 @@ console.log(name); // Thüringen
 npm test
 npm run lint
 npm run format:check
+npm run validate:data
 ```
 
-`npm run validate:data` checks consistency between `country/*.json`, `regions/*.json`, `regionNames/*.json`, and the statically supported countries in `lib/region.js`.
+`npm run validate:data` checks consistency between `country/*.json`, `regions/*.json`, `regionNames/*.json`, `geocode/*.json`, and the statically supported countries in `lib/region.js` and `lib/geocode.js`.
 
 See [DATA_REQUIREMENTS.md](./DATA_REQUIREMENTS.md) for the country-data format and checklist.
 
