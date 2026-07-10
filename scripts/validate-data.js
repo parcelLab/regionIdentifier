@@ -25,6 +25,18 @@ function addError(message) {
 function addWarning(message) {
   warnings.push(message);
 }
+
+function resetValidationState() {
+  errors.length = 0;
+  warnings.length = 0;
+}
+
+function validationState() {
+  return {
+    errors: [...errors],
+    warnings: [...warnings],
+  };
+}
 const isPlainObject = (value) =>
   value !== null && typeof value === 'object' && !Array.isArray(value);
 const isPositiveInteger = (value) => Number.isSafeInteger(value) && value > 0;
@@ -339,79 +351,102 @@ function printResult(dataIsoCodes) {
   process.exitCode = 1;
 }
 
-const dataIsoCodes = {
-  country: jsonIsoCodes('country'),
-  regions: jsonIsoCodes('regions'),
-  regionNames: jsonIsoCodes('regionNames'),
-  geocode: jsonIsoCodes('geocode'),
+function runValidation() {
+  resetValidationState();
+
+  const dataIsoCodes = {
+    country: jsonIsoCodes('country'),
+    regions: jsonIsoCodes('regions'),
+    regionNames: jsonIsoCodes('regionNames'),
+    geocode: jsonIsoCodes('geocode'),
+  };
+  const staticIsoCodes = new Set(RegionIdentifier.availableCountries);
+  const geocodeIsoCodes = new Set(coordinates.availableCountries);
+
+  // Validate country codes from both data file names and runtime allowlists.
+  validateIsoSources({
+    'country': dataIsoCodes.country,
+    'regions': dataIsoCodes.regions,
+    'regionNames': dataIsoCodes.regionNames,
+    'geocode': dataIsoCodes.geocode,
+    'lib/region.js availableCountries': staticIsoCodes,
+    'lib/geocode.js availableCountries': geocodeIsoCodes,
+  });
+
+  // Every country supported by lib/region.js needs zip config, region mappings, and names.
+  ensureSubset(
+    staticIsoCodes,
+    dataIsoCodes.country,
+    (isoCode) => `country/${isoCode}.json: missing file`,
+  );
+  ensureSubset(
+    staticIsoCodes,
+    dataIsoCodes.regions,
+    (isoCode) => `regions/${isoCode}.json: missing file`,
+  );
+  ensureSubset(
+    staticIsoCodes,
+    dataIsoCodes.regionNames,
+    (isoCode) => `regionNames/${isoCode}.json: missing file`,
+  );
+
+  // Every regions/*.json file must have the config and names needed to interpret it.
+  ensureSubset(
+    dataIsoCodes.regions,
+    dataIsoCodes.country,
+    (isoCode) => `country/${isoCode}.json: missing file`,
+  );
+  ensureSubset(
+    dataIsoCodes.regions,
+    dataIsoCodes.regionNames,
+    (isoCode) => `regionNames/${isoCode}.json: missing file`,
+  );
+  ensureSubset(
+    dataIsoCodes.regions,
+    staticIsoCodes,
+    (isoCode) => `lib/region.js availableCountries: missing "${isoCode}"`,
+  );
+
+  // lib/geocode.js and geocode/*.json must stay in sync in both directions.
+  ensureSubset(
+    geocodeIsoCodes,
+    dataIsoCodes.geocode,
+    (isoCode) => `geocode/${isoCode}.json: missing file`,
+  );
+  ensureSubset(
+    dataIsoCodes.geocode,
+    geocodeIsoCodes,
+    (isoCode) => `lib/geocode.js availableCountries: missing "${isoCode}"`,
+  );
+
+  // Deep-validate the contents only after the cross-file existence checks are registered.
+  for (const isoCode of sortedValues(dataIsoCodes.regions)) {
+    validateRegionData(isoCode);
+  }
+
+  // Geocode content validation is intentionally shallow because legacy coordinates are noisy.
+  for (const isoCode of sortedValues(dataIsoCodes.geocode)) {
+    validateGeocodeData(isoCode);
+  }
+
+  return {
+    dataIsoCodes,
+    ...validationState(),
+  };
+}
+
+if (require.main === module) {
+  const { dataIsoCodes } = runValidation();
+  printResult(dataIsoCodes);
+}
+
+module.exports = {
+  ensureSubset,
+  resetValidationState,
+  validateArrayFile,
+  validateCountryConfig,
+  validateGeocodeMappingEntry,
+  validateRegionMappingEntry,
+  validateRegionNames,
+  validationState,
 };
-const staticIsoCodes = new Set(RegionIdentifier.availableCountries);
-const geocodeIsoCodes = new Set(coordinates.availableCountries);
-
-// Validate country codes from both data file names and runtime allowlists.
-validateIsoSources({
-  'country': dataIsoCodes.country,
-  'regions': dataIsoCodes.regions,
-  'regionNames': dataIsoCodes.regionNames,
-  'geocode': dataIsoCodes.geocode,
-  'lib/region.js availableCountries': staticIsoCodes,
-  'lib/geocode.js availableCountries': geocodeIsoCodes,
-});
-
-// Every country supported by lib/region.js needs zip config, region mappings, and names.
-ensureSubset(
-  staticIsoCodes,
-  dataIsoCodes.country,
-  (isoCode) => `country/${isoCode}.json: missing file`,
-);
-ensureSubset(
-  staticIsoCodes,
-  dataIsoCodes.regions,
-  (isoCode) => `regions/${isoCode}.json: missing file`,
-);
-ensureSubset(
-  staticIsoCodes,
-  dataIsoCodes.regionNames,
-  (isoCode) => `regionNames/${isoCode}.json: missing file`,
-);
-
-// Every regions/*.json file must have the config and names needed to interpret it.
-ensureSubset(
-  dataIsoCodes.regions,
-  dataIsoCodes.country,
-  (isoCode) => `country/${isoCode}.json: missing file`,
-);
-ensureSubset(
-  dataIsoCodes.regions,
-  dataIsoCodes.regionNames,
-  (isoCode) => `regionNames/${isoCode}.json: missing file`,
-);
-ensureSubset(
-  dataIsoCodes.regions,
-  staticIsoCodes,
-  (isoCode) => `lib/region.js availableCountries: missing "${isoCode}"`,
-);
-
-// lib/geocode.js and geocode/*.json must stay in sync in both directions.
-ensureSubset(
-  geocodeIsoCodes,
-  dataIsoCodes.geocode,
-  (isoCode) => `geocode/${isoCode}.json: missing file`,
-);
-ensureSubset(
-  dataIsoCodes.geocode,
-  geocodeIsoCodes,
-  (isoCode) => `lib/geocode.js availableCountries: missing "${isoCode}"`,
-);
-
-// Deep-validate the contents only after the cross-file existence checks are registered.
-for (const isoCode of sortedValues(dataIsoCodes.regions)) {
-  validateRegionData(isoCode);
-}
-
-// Geocode content validation is intentionally shallow because legacy coordinates are noisy.
-for (const isoCode of sortedValues(dataIsoCodes.geocode)) {
-  validateGeocodeData(isoCode);
-}
-
-printResult(dataIsoCodes);
