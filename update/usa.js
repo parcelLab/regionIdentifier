@@ -14,7 +14,7 @@ for (const code of codes) {
 
   const agg = {};
   for (const line of data.split('\n')) {
-    const [rawCountry, zip, , , rawState] = line.split('\t'); // eslint-disable-line unicorn/no-unreadable-array-destructuring
+    const [rawCountry, zip, , , rawState] = line.split('\t', 5); // eslint-disable-line unicorn/no-unreadable-array-destructuring
     const state = rawCountry === 'US' ? rawState : rawCountry;
     if (state) {
       const region = `US-${state}`;
