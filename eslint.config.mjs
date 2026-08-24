@@ -40,6 +40,7 @@ export default [
       'unicorn/prefer-spread': 'off',
       'unicorn/prefer-top-level-await': 'off',
       'unicorn/prevent-abbreviations': 'off',
+      'unicorn/single-line-block-comment-style': ['error', 'single-line'],
 
       'prefer-const': 'error',
       'unicorn/prefer-module': 'off',
