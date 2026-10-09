@@ -1,8 +1,9 @@
 const { default: axios } = require('axios');
-const { equal, rejects, match } = require('node:assert/strict');
+const { deepEqual, equal, rejects, match } = require('node:assert/strict');
 const { describe, it } = require('node:test');
 
 const { GoogleMapsAPIError } = require('../lib/errors');
+const coordinates = require('../lib/geocode');
 const RegionIdentifier = require('../lib/region');
 const countriesPostalCodes = require('./fixtures/countries-postal-codes.json');
 
@@ -52,6 +53,12 @@ describe('REGION IDENTIFIER', () => {
 });
 
 describe('Fallback and error handling', () => {
+  it('preserves coordinate lookup results and misses', () => {
+    deepEqual(coordinates('DEU', '01945'), ['14', '51.4333']);
+    equal(coordinates('DEU', '00000'), undefined);
+    equal(coordinates('QAT', '06000'), undefined);
+  });
+
   it('returns null without Google Maps when static data has no matching zip code', async () => {
     const [region, googleUsed] = await withMockedGoogleGet(
       async () => {
@@ -84,6 +91,31 @@ describe('Fallback and error handling', () => {
 
   it('throws when country cannot be resolved', async () => {
     await rejects(() => identifier.get('Atlantis', '12345'));
+  });
+
+  it('normalizes British region names from Google Maps', async () => {
+    for (const [name, code] of [
+      ['England', 'ENG'],
+      ['Northern Ireland', 'NIR'],
+      ['Scotland', 'SCT'],
+      ['Wales', 'WLS'],
+    ]) {
+      const region = await withMockedGoogleGet(
+        async () => googleMapsResponse(name),
+        () => identifier.detectWithGoogle({ alpha2: 'GB', alpha3: 'GBR' }, 'CF10'),
+      );
+      equal(region, `GB-${code}`);
+    }
+  });
+
+  it('returns null for Google Maps responses without data or results', async () => {
+    for (const response of [{}, { data: { results: [] } }]) {
+      const region = await withMockedGoogleGet(
+        async () => response,
+        () => identifier.detectWithGoogle({ alpha2: 'QA', alpha3: 'QAT' }, '06000'),
+      );
+      equal(region, null);
+    }
   });
 
   it('wraps Google Maps request failures', async () => {
