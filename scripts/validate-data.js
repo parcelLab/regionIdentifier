@@ -303,16 +303,18 @@ function validateRegionData(isoCode) {
   validateCountryConfig(isoCode, countryConfig);
   validateRegionNames(isoCode, regionNames);
 
-  if (!countryConfig || !regionNames) {
+  if (
+    !countryConfig ||
+    !regionNames ||
+    !validateArrayFile(`regions/${isoCode}.json`, regionMappings, { allowEmpty: false })
+  ) {
     return;
   }
 
-  if (validateArrayFile(`regions/${isoCode}.json`, regionMappings, { allowEmpty: false })) {
-    regionMappings.forEach((entry, index) => {
-      validateRegionMappingEntry({ isoCode, entry, index, regionNames, countryConfig });
-    });
-    warnAboutUnusedRegionNames(isoCode, regionNames, regionMappings);
-  }
+  regionMappings.forEach((entry, index) => {
+    validateRegionMappingEntry({ isoCode, entry, index, regionNames, countryConfig });
+  });
+  warnAboutUnusedRegionNames(isoCode, regionNames, regionMappings);
 }
 
 /** Validates geocode file shape without judging legacy coordinate quality. */
