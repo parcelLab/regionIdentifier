@@ -1,7 +1,15 @@
 version: 2
+registries:
+  github-npm:
+    type: npm-registry
+    url: https://npm.pkg.github.com
+    scope: "@parcellab"
+    token: ${{ secrets.PACKAGES_READ_TOKEN }}
 updates:
   - package-ecosystem: "npm"
     directory: "/"
+    registries:
+      - github-npm
     schedule:
       interval: "weekly"
       day: "monday"
