@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [master]
 
+env:
+  NPM_GITHUB_TOKEN: ${{ secrets.PACKAGES_READ_TOKEN }}
+
 jobs:
   static-checks:
     runs-on: ubuntu-latest

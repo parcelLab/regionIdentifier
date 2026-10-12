@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const Country = require('countryjs');
+const Country = require('@parcellab/countryjs');
 
 const coordinates = require('../lib/geocode');
 const RegionIdentifier = require('../lib/region');
