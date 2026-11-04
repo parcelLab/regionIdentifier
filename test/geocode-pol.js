@@ -17,7 +17,7 @@ it('does not invent Polish points for missing or malformed codes', () => {
   for (const zip of ['00-001', '99-999', '0002', '00', '00-002 extra', 'PL-00-002']) {
     equal(coordinates('POL', zip), undefined);
   }
-  deepEqual(coordinates('DEU', '01945 extra'), ['14', '51.4333']);
+  deepEqual(coordinates('DEU', '01945 extra'), ['13.878122', '51.419711']);
 });
 
 it('contains unique full Polish postcodes with finite WGS84 points', () => {

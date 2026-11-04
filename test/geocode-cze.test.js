@@ -16,7 +16,7 @@ test('CZE supports compact and spaced postcodes and country aliases', () => {
   for (const zip of ['00000', '011000', '110', '110  00', '11000 extra', 'CZ-11000']) {
     equal(coordinates('CZE', zip), undefined);
   }
-  deepEqual(coordinates('DEU', '01945'), ['14', '51.4333']);
+  deepEqual(coordinates('DEU', '01945'), ['13.878122', '51.419711']);
 });
 
 test('CZE contains unique full postcodes and finite coordinates', () => {

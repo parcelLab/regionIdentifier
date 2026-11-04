@@ -30,5 +30,5 @@ it('contains unique full postcodes with finite WGS84 coordinates', () => {
       ok(value.length > 0 && Number.isFinite(Number(value)) && Math.abs(Number(value)) <= limit);
     }
   }
-  deepEqual(coordinates('DEU', '01945'), ['14', '51.4333']);
+  deepEqual(coordinates('DEU', '01945'), ['13.878122', '51.419711']);
 });
