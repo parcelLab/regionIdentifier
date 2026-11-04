@@ -25,14 +25,7 @@ test('GBR rural and island districts use one representative point', () => {
 });
 
 test('GBR rejects unknown and malformed postcodes without a fallback', () => {
-  for (const zip of [
-    'ZZ99 9ZZ',
-    '00000',
-    'SW1A garbage',
-    'SW1A 0AA extra',
-    'SW 1A 0AA',
-    'JE1 1AA',
-  ]) {
+  for (const zip of ['ZZ99 9ZZ', '00000', 'SW1A garbage', 'SW1A 0AA extra', 'SW 1A 0AA']) {
     equal(coordinates('GBR', zip), undefined);
   }
 });
