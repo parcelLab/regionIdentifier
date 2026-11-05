@@ -1,6 +1,6 @@
 # Consolidated postal geocoding
 
-This change integrates country PRs #95–123 into one review. It refreshes ten existing datasets and adds nineteen, for 29 supported geocode countries. Every source PR head remains in the commit history. Country datasets, source documents, generators, and fixtures are unchanged from those PRs.
+This change integrates country PRs #95–123 into one review. It refreshes ten existing datasets and adds nineteen, for 29 supported geocode countries. Every source PR head remains in the commit history. Country source documents, generators, and fixtures are retained from those PRs. A subsequent size reduction rounds all distributed geocode coordinates to four significant digits and compacts the JSON. Postal codes and row order remain unchanged.
 
 The shared runtime combines the country-specific normalization rules. Three tests in the CZE/NOR/POL branches used the old German point for 01945; their expectations now use the refreshed DEU dataset. Region-name mappings and the string `[longitude, latitude]` return contract are unchanged.
 
@@ -52,4 +52,6 @@ Brazil, India, Russia, and Turkey are not added. Brazil has incomplete CEP cover
 
 ## Validation
 
-The combined suite has 171 tests. Lint, formatting, and data validation are checked on the combined branch. A consolidation audit compares all 29 source heads with the integrated history, verifies unchanged country assets, and compares 604,260 postcode-normalization inputs with the original country branches.
+The combined suite includes country lookup tests and tests for precision, compact encoding, and idempotence. Lint, formatting, and data validation are checked on the combined branch. A consolidation audit compares all 29 source heads with the integrated history, verifies unchanged country assets, and compares 604,260 postcode-normalization inputs with the original country branches.
+
+After any country generator, run `npm run geocode:compact` to apply the distribution precision and encoding policy. See the README for limits.

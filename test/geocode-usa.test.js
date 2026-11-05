@@ -5,12 +5,12 @@ const data = require('../geocode/USA.json');
 
 it('looks up USA ZIP and ZIP+4 formats at five-digit precision', () => {
   for (const zip of ['00501', ' 00501 ', '00501-1234', '005011234', '00501 1234']) {
-    deepEqual(coordinates('USA', zip), ['-73.0451', '40.8154']);
+    deepEqual(coordinates('USA', zip), ['-73.05', '40.82']);
   }
-  deepEqual(coordinates('US', '10001'), ['-73.9967', '40.7484']);
-  deepEqual(coordinates('United States', '59001'), ['-109.4692', '45.5154']);
-  deepEqual(coordinates('USA', '99553'), ['-165.7854', '54.143']);
-  deepEqual(coordinates('USA', '96860'), ['-157.92255', '21.3304']);
+  deepEqual(coordinates('US', '10001'), ['-74', '40.75']);
+  deepEqual(coordinates('United States', '59001'), ['-109.5', '45.52']);
+  deepEqual(coordinates('USA', '99553'), ['-165.8', '54.14']);
+  deepEqual(coordinates('USA', '96860'), ['-157.9', '21.33']);
 });
 
 it('returns undefined for unknown or malformed USA ZIP codes', () => {

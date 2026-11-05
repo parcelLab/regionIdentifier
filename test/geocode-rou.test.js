@@ -6,13 +6,13 @@ const data = require('../geocode/ROU.json');
 
 test('ROU resolves full six-digit codes, aliases and leading zeros', () => {
   for (const country of ['ROU', 'RO', 'Romania']) {
-    deepEqual(coordinates(country, '010011'), ['26.0602', '44.4914']);
+    deepEqual(coordinates(country, '010011'), ['26.06', '44.49']);
   }
-  deepEqual(coordinates('ROU', ' 010011 '), ['26.0602', '44.4914']);
-  deepEqual(coordinates('ROU', '060274'), ['26.0174', '44.4378']);
-  deepEqual(coordinates('ROU', '200716'), ['23.8', '44.3167']);
-  deepEqual(coordinates('ROU', '827060'), ['29.386', '45.1746']);
-  deepEqual(coordinates('ROU', '510002'), ['23.5695', '46.08405']);
+  deepEqual(coordinates('ROU', ' 010011 '), ['26.06', '44.49']);
+  deepEqual(coordinates('ROU', '060274'), ['26.02', '44.44']);
+  deepEqual(coordinates('ROU', '200716'), ['23.8', '44.32']);
+  deepEqual(coordinates('ROU', '827060'), ['29.39', '45.17']);
+  deepEqual(coordinates('ROU', '510002'), ['23.57', '46.08']);
 });
 
 test('ROU does not infer missing, shortened or malformed codes', () => {

@@ -5,9 +5,9 @@ const data = require('../geocode/AUT.json');
 const coordinates = require('../lib/geocode');
 
 test('AUT returns representative points in longitude/latitude order as strings', () => {
-  deepEqual(coordinates('AUT', '1010'), ['16.3721', '48.2085']);
-  deepEqual(coordinates('AT', '9942'), ['12.6058', '46.7135']);
-  deepEqual(coordinates('Austria', '6991'), ['10.1876', '47.3578']);
+  deepEqual(coordinates('AUT', '1010'), ['16.37', '48.21']);
+  deepEqual(coordinates('AT', '9942'), ['12.61', '46.71']);
+  deepEqual(coordinates('Austria', '6991'), ['10.19', '47.36']);
   deepEqual(coordinates('AUT', '1010 Wien'), coordinates('AUT', '1010'));
   equal(coordinates('AUT', '0000'), undefined);
   equal(coordinates('AUT', '01010'), undefined);

@@ -7,11 +7,11 @@ const data = require('../geocode/IRL.json');
 describe('IRL routing-key coordinates', () => {
   it('accepts full, compact, lowercase and routing-key inputs', () => {
     for (const code of ['D01', 'D01 A3Y8', 'D01A3Y8', ' d01 a3y8 ']) {
-      deepEqual(coordinates('IRL', code), ['-6.2545', '53.354']);
+      deepEqual(coordinates('IRL', code), ['-6.255', '53.35']);
     }
-    deepEqual(coordinates('IE', 'P75 RY96'), ['-9.45', '51.6833']);
-    deepEqual(coordinates('Ireland', 'F94 DR52'), ['-8.2809', '54.4778']);
-    deepEqual(coordinates('IRL', 'd6w'), ['-6.3012', '53.3087']);
+    deepEqual(coordinates('IE', 'P75 RY96'), ['-9.45', '51.68']);
+    deepEqual(coordinates('Ireland', 'F94 DR52'), ['-8.281', '54.48']);
+    deepEqual(coordinates('IRL', 'd6w'), ['-6.301', '53.31']);
   });
 
   it('does not resolve unknown, missing or malformed keys and suffixes', () => {

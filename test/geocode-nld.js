@@ -6,11 +6,11 @@ const data = require('../geocode/NLD.json');
 
 it('looks up NLD four-digit prefixes and full postal codes', () => {
   for (const zip of ['1012', '1012AB', '1012 AB', '1012 ab', ' 1012\tAB ']) {
-    deepEqual(coordinates('NLD', zip), ['4.895100', '52.373500']);
+    deepEqual(coordinates('NLD', zip), ['4.895', '52.37']);
   }
-  deepEqual(coordinates('NL', '1791WX'), ['4.794900', '53.056500']);
-  deepEqual(coordinates('Netherlands', '9979XX'), ['6.830300', '53.444500']);
-  deepEqual(coordinates('NLD', '6291VV'), ['6.015400', '50.772000']);
+  deepEqual(coordinates('NL', '1791WX'), ['4.795', '53.06']);
+  deepEqual(coordinates('Netherlands', '9979XX'), ['6.83', '53.44']);
+  deepEqual(coordinates('NLD', '6291VV'), ['6.015', '50.77']);
 });
 
 it('returns undefined for unknown or malformed NLD codes', () => {

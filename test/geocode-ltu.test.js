@@ -10,7 +10,7 @@ const row = (latitude, longitude) => `LT\t00001\tPlace\t\t\t\t\t\t\t${latitude}\
 test('LTU resolves full postcodes, leading zeros and country prefixes', () => {
   for (const country of ['LTU', 'LT', 'Lithuania']) {
     for (const zip of ['04340', 'LT-04340', 'lt-04340', ' LT-04340 ']) {
-      assert.deepEqual(coordinates(country, zip), ['25.2172', '54.6932']);
+      assert.deepEqual(coordinates(country, zip), ['25.22', '54.69']);
     }
   }
   // UPU rural/poste-restante example: Alanta, not a delivery-address centroid.

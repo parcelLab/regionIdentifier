@@ -6,12 +6,12 @@ const data = require('../geocode/JPN.json');
 
 test('JPN resolves full postal codes with compact and hyphenated formats', () => {
   for (const country of ['JPN', 'JP', 'Japan']) {
-    deepEqual(coordinates(country, '100-0001'), ['139.7521', '35.6841']);
-    deepEqual(coordinates(country, '1000001'), ['139.7521', '35.6841']);
+    deepEqual(coordinates(country, '100-0001'), ['139.8', '35.68']);
+    deepEqual(coordinates(country, '1000001'), ['139.8', '35.68']);
   }
-  deepEqual(coordinates('JPN', '097-1201'), ['141.0412', '45.3021']);
-  deepEqual(coordinates('JPN', '9071801'), ['123.0', '24.4667']);
-  deepEqual(coordinates('JPN', '0691334'), ['141.6888', '43.0115']);
+  deepEqual(coordinates('JPN', '097-1201'), ['141', '45.3']);
+  deepEqual(coordinates('JPN', '9071801'), ['123', '24.47']);
+  deepEqual(coordinates('JPN', '0691334'), ['141.7', '43.01']);
 });
 
 test('JPN does not turn prefixes, malformed or unknown codes into a location', () => {

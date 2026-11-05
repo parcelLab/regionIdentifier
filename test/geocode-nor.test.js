@@ -6,12 +6,12 @@ const coordinates = require('../lib/geocode');
 
 it('resolves full Norwegian postcodes with leading zeros and optional NO- prefix', () => {
   for (const zip of ['0150', ' 0150 ', 'NO-0150', 'no-0150']) {
-    deepEqual(coordinates('NOR', zip), ['10.7461', '59.9127']);
+    deepEqual(coordinates('NOR', zip), ['10.75', '59.91']);
   }
-  deepEqual(coordinates('NO', '5003'), ['5.3242', '60.393']);
-  deepEqual(coordinates('Norway', '6783'), ['6.7179', '61.9026']);
-  deepEqual(coordinates('NOR', '9900'), ['30.1604', '69.7197']);
-  deepEqual(coordinates('NOR', '0001'), ['10.7461', '59.9127']);
+  deepEqual(coordinates('NO', '5003'), ['5.324', '60.39']);
+  deepEqual(coordinates('Norway', '6783'), ['6.718', '61.9']);
+  deepEqual(coordinates('NOR', '9900'), ['30.16', '69.72']);
+  deepEqual(coordinates('NOR', '0001'), ['10.75', '59.91']);
   for (const zip of ['0000', '150', '01500', '01 50', '0150 Oslo', '9170']) {
     equal(coordinates('NOR', zip), undefined);
   }
@@ -30,5 +30,5 @@ it('contains unique full postcodes with finite WGS84 coordinates', () => {
       ok(value.length > 0 && Number.isFinite(Number(value)) && Math.abs(Number(value)) <= limit);
     }
   }
-  deepEqual(coordinates('DEU', '01945'), ['13.878122', '51.419711']);
+  deepEqual(coordinates('DEU', '01945'), ['13.88', '51.42']);
 });

@@ -5,3 +5,4 @@ package-lock.json
 country/**/*.json
 regionNames/**/*.json
 regions/**/*.json
+geocode/**/*.json

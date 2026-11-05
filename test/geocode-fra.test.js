@@ -6,13 +6,13 @@ const data = require('../geocode/FRA.json');
 
 test('FRA resolves official postal codes as longitude/latitude strings', () => {
   for (const country of ['FRA', 'FR', 'France']) {
-    deepEqual(coordinates(country, '75001'), ['2.335944', '48.862005']);
+    deepEqual(coordinates(country, '75001'), ['2.336', '48.86']);
   }
-  deepEqual(coordinates('FRA', '75001 Paris'), ['2.335944', '48.862005']);
-  deepEqual(coordinates('FRA', '01400'), ['4.990552', '46.138958']);
-  deepEqual(coordinates('FRA', '20000'), ['8.705767', '41.922694']);
-  deepEqual(coordinates('FRA', '97400'), ['55.444396', '-20.943436']);
-  deepEqual(coordinates('FRA', '97600'), ['45.193803', '-12.764597']);
+  deepEqual(coordinates('FRA', '75001 Paris'), ['2.336', '48.86']);
+  deepEqual(coordinates('FRA', '01400'), ['4.991', '46.14']);
+  deepEqual(coordinates('FRA', '20000'), ['8.706', '41.92']);
+  deepEqual(coordinates('FRA', '97400'), ['55.44', '-20.94']);
+  deepEqual(coordinates('FRA', '97600'), ['45.19', '-12.76']);
   for (const zip of ['00000', '75000', '1400', '75 001', '98000', '97133']) {
     equal(coordinates('FRA', zip), undefined);
   }

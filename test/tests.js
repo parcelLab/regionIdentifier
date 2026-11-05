@@ -54,7 +54,7 @@ describe('REGION IDENTIFIER', () => {
 
 describe('Fallback and error handling', () => {
   it('preserves coordinate lookup results and misses', () => {
-    deepEqual(coordinates('DEU', '01945'), ['13.878122', '51.419711']);
+    deepEqual(coordinates('DEU', '01945'), ['13.88', '51.42']);
     equal(coordinates('DEU', '00000'), undefined);
     equal(coordinates('QAT', '06000'), undefined);
   });

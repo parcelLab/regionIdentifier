@@ -4,9 +4,9 @@ const coordinates = require('../lib/geocode');
 const data = require('../geocode/SVK.json');
 
 test('SVK supports full postal codes and leading zeros', () => {
-  assert.deepEqual(coordinates('SVK', '01001'), ['18.78045', '49.21115']);
+  assert.deepEqual(coordinates('SVK', '01001'), ['18.78', '49.21']);
   assert.deepEqual(coordinates('SK', '010 01'), coordinates('SVK', '01001'));
-  assert.deepEqual(coordinates('SVK', '013 06'), ['19.0294', '49.259']);
+  assert.deepEqual(coordinates('SVK', '013 06'), ['19.03', '49.26']);
   for (const zip of ['00000', '010', '010 010', 'abcde']) {
     assert.equal(coordinates('SVK', zip), undefined);
   }

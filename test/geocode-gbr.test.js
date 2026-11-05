@@ -6,11 +6,11 @@ const data = require('../geocode/GBR.json');
 
 test('GBR accepts district, spaced, compact, lowercase and surrounding whitespace', () => {
   for (const zip of ['SW1A', 'SW1A 0AA', 'SW1A0AA', 'sw1a 0aa', '  sw1a\t0aa  ']) {
-    deepEqual(coordinates('GBR', zip), ['-0.1328', '51.5018']);
+    deepEqual(coordinates('GBR', zip), ['-0.1328', '51.5']);
   }
-  deepEqual(coordinates('GBR', 'JE1 1AA'), ['-2.1049', '49.1880']);
-  deepEqual(coordinates('GB', 'BT1 5GS'), ['-5.9333', '54.5833']);
-  deepEqual(coordinates('United Kingdom', 'TR21 0PT'), ['-6.3114', '49.9145']);
+  deepEqual(coordinates('GBR', 'JE1 1AA'), ['-2.105', '49.19']);
+  deepEqual(coordinates('GB', 'BT1 5GS'), ['-5.933', '54.58']);
+  deepEqual(coordinates('United Kingdom', 'TR21 0PT'), ['-6.311', '49.91']);
 });
 
 test('GBR rural and island districts use one representative point', () => {

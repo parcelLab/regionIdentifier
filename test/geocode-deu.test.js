@@ -17,12 +17,12 @@ test('DEU has one finite representative point per five-digit postal code', () =>
 test('DEU lookup preserves strings, leading zeros, aliases and trailing locality input', () => {
   for (const country of ['DEU', 'DE', 'Germany']) {
     for (const zip of ['01067', '01067 Dresden']) {
-      deepEqual(coordinates(country, zip), ['13.726900', '51.054700']);
+      deepEqual(coordinates(country, zip), ['13.73', '51.05']);
     }
   }
-  deepEqual(coordinates('DEU', '01945'), ['13.878122', '51.419711']);
-  deepEqual(coordinates('DEU', '27498'), ['7.886300', '54.181400']);
-  deepEqual(coordinates('DEU', '87561'), ['10.279400', '47.407200']);
+  deepEqual(coordinates('DEU', '01945'), ['13.88', '51.42']);
+  deepEqual(coordinates('DEU', '27498'), ['7.886', '54.18']);
+  deepEqual(coordinates('DEU', '87561'), ['10.28', '47.41']);
   for (const zip of ['00000', '99999', '1067', '01 067']) {
     equal(coordinates('DEU', zip), undefined);
   }

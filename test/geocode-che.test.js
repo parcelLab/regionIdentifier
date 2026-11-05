@@ -5,10 +5,10 @@ const data = require('../geocode/CHE.json');
 const coordinates = require('../lib/geocode');
 
 test('CHE resolves urban, rural Alpine, border and shared postcodes', () => {
-  deepEqual(coordinates('CHE', '8001'), ['8.5424538453222', '47.372308632286455']);
-  deepEqual(coordinates('CH', '3823'), ['7.960046421526585', '46.58502033435045']);
-  deepEqual(coordinates('Switzerland', '7563'), ['10.365456579963507', '46.94882200625801']);
-  deepEqual(coordinates('CHE', '2300'), ['6.826320751992897', '47.100984494265035']);
+  deepEqual(coordinates('CHE', '8001'), ['8.542', '47.37']);
+  deepEqual(coordinates('CH', '3823'), ['7.96', '46.59']);
+  deepEqual(coordinates('Switzerland', '7563'), ['10.37', '46.95']);
+  deepEqual(coordinates('CHE', '2300'), ['6.826', '47.1']);
   deepEqual(coordinates('CHE', '8001 Zürich'), coordinates('CHE', '8001'));
   for (const zip of ['0000', '08001', '800', '9485', '3001', 'CH-8001']) {
     equal(coordinates('CHE', zip), undefined);

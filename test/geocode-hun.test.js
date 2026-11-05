@@ -6,12 +6,12 @@ const data = require('../geocode/HUN.json');
 
 it('looks up Hungarian urban, rural and border postal codes', () => {
   for (const country of ['HUN', 'HU', 'Hungary']) {
-    deepEqual(coordinates(country, '1014'), ['19.0404', '47.4984']);
-    deepEqual(coordinates(country, ' 1014 '), ['19.0404', '47.4984']);
+    deepEqual(coordinates(country, '1014'), ['19.04', '47.5']);
+    deepEqual(coordinates(country, ' 1014 '), ['19.04', '47.5']);
   }
-  deepEqual(coordinates('HUN', '9945'), ['16.3531', '46.7890']);
-  deepEqual(coordinates('HUN', '3999'), ['21.4167', '48.5500']);
-  deepEqual(coordinates('HUN', '7370'), ['18.1151', '46.2559']);
+  deepEqual(coordinates('HUN', '9945'), ['16.35', '46.79']);
+  deepEqual(coordinates('HUN', '3999'), ['21.42', '48.55']);
+  deepEqual(coordinates('HUN', '7370'), ['18.12', '46.26']);
 });
 
 it('does not turn malformed or unknown Hungarian codes into known codes', () => {

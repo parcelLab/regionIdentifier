@@ -7,11 +7,11 @@ const generate = require('../scripts/generate-aus-geocode');
 
 test('AUS resolves full postcodes and preserves leading zeros and coordinate strings', () => {
   for (const country of ['AUS', 'AU', 'Australia']) {
-    assert.deepEqual(coordinates(country, '0800'), ['130.841550', '-12.461000']);
-    assert.deepEqual(coordinates(country, ' 2000 '), ['151.204386', '-33.865529']);
+    assert.deepEqual(coordinates(country, '0800'), ['130.8', '-12.46']);
+    assert.deepEqual(coordinates(country, ' 2000 '), ['151.2', '-33.87']);
   }
-  assert.deepEqual(coordinates('AUS', '4482'), ['139.866600', '-25.814900']);
-  assert.deepEqual(coordinates('AUS', '2898'), ['159.068300', '-31.527900']);
+  assert.deepEqual(coordinates('AUS', '4482'), ['139.9', '-25.81']);
+  assert.deepEqual(coordinates('AUS', '2898'), ['159.1', '-31.53']);
   for (const zip of ['0000', '800', '20 00', '2000 NSW', '2899', '6798', '6799']) {
     assert.equal(coordinates('AUS', zip), undefined);
   }

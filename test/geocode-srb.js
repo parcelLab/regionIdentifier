@@ -4,7 +4,7 @@ const coordinates = require('../lib/geocode');
 const data = require('../geocode/SRB.json');
 
 test('Serbia postal locality points and unknown codes', () => {
-  deepEqual(coordinates('SRB', '11000'), ['20.4651', '44.804']);
+  deepEqual(coordinates('SRB', '11000'), ['20.47', '44.8']);
   deepEqual(coordinates('RS', '11000 Beograd'), coordinates('SRB', '11000'));
   equal(coordinates('SRB', '00000'), undefined);
   equal(coordinates('SRB', '110000'), undefined);

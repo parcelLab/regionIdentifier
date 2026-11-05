@@ -7,12 +7,12 @@ const coordinates = require('../lib/geocode');
 describe('KOR postal coordinates', () => {
   it('resolves full codes, leading zeros, and existing space suffix handling', () => {
     for (const country of ['KOR', 'KR', 'South Korea']) {
-      deepEqual(coordinates(country, '04524'), ['126.9777', '37.5662']);
+      deepEqual(coordinates(country, '04524'), ['127', '37.57']);
     }
-    deepEqual(coordinates('KOR', '04524 Seoul'), ['126.9777', '37.5662']);
-    deepEqual(coordinates('KOR', '10003'), ['126.5925', '37.72855']);
-    deepEqual(coordinates('KOR', '63002'), ['126.1878', '33.3453']);
-    deepEqual(coordinates('KOR', '40240'), ['131.8678', '37.24']);
+    deepEqual(coordinates('KOR', '04524 Seoul'), ['127', '37.57']);
+    deepEqual(coordinates('KOR', '10003'), ['126.6', '37.73']);
+    deepEqual(coordinates('KOR', '63002'), ['126.2', '33.35']);
+    deepEqual(coordinates('KOR', '40240'), ['131.9', '37.24']);
   });
 
   it('does not guess missing, partial, or obsolete codes', () => {

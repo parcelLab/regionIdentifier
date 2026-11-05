@@ -5,10 +5,10 @@ const data = require('../geocode/BEL.json');
 const coordinates = require('../lib/geocode');
 
 test('BEL returns full-postcode representative points in longitude, latitude order', () => {
-  deepEqual(coordinates('BEL', '1000'), ['4.3488', '50.8504']);
-  deepEqual(coordinates('BE', '1000 Bruxelles'), ['4.3488', '50.8504']);
-  deepEqual(coordinates('Belgium', '4790'), ['6.135', '50.1956']);
-  deepEqual(coordinates('BEL', '9990 Maldegem'), ['3.4451', '51.2074']);
+  deepEqual(coordinates('BEL', '1000'), ['4.349', '50.85']);
+  deepEqual(coordinates('BE', '1000 Bruxelles'), ['4.349', '50.85']);
+  deepEqual(coordinates('Belgium', '4790'), ['6.135', '50.2']);
+  deepEqual(coordinates('BEL', '9990 Maldegem'), ['3.445', '51.21']);
   throws(() => coordinates('bel', '1000'), /Could not resolve country information/);
   for (const zip of ['0000', '0612', '612', '1005', '100', '10000', '10 00', 'BE-1000']) {
     equal(coordinates('BEL', zip), undefined);

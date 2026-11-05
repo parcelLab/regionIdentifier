@@ -6,10 +6,10 @@ const data = require('../geocode/SWE.json');
 test('SWE accepts full compact and spaced postal codes', () => {
   for (const country of ['SWE', 'SE', 'Sweden']) {
     for (const zip of ['11120', '111 20']) {
-      deepEqual(coordinates(country, zip), ['18.0649', '59.3326']);
+      deepEqual(coordinates(country, zip), ['18.06', '59.33']);
     }
   }
-  deepEqual(coordinates('SE', '624 66'), ['19.1333', '57.9167']);
+  deepEqual(coordinates('SE', '624 66'), ['19.13', '57.92']);
   for (const zip of ['00000', '001 00', '111', '11120extra', '111  20']) {
     equal(coordinates('SE', zip), undefined);
   }

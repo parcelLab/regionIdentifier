@@ -8,15 +8,15 @@ const generate = require('../scripts/generate-geocode-cze');
 test('CZE supports compact and spaced postcodes and country aliases', () => {
   for (const country of ['CZE', 'CZ', 'Czech Republic']) {
     for (const zip of ['11000', '110 00', ' 110 00 ']) {
-      deepEqual(coordinates(country, zip), ['14.425633', '50.084633']);
+      deepEqual(coordinates(country, zip), ['14.43', '50.08']);
     }
   }
-  deepEqual(coordinates('CZE', '353 01'), ['12.710055', '49.976003']);
-  deepEqual(coordinates('CZE', '73998'), ['18.793250', '49.523850']);
+  deepEqual(coordinates('CZE', '353 01'), ['12.71', '49.98']);
+  deepEqual(coordinates('CZE', '73998'), ['18.79', '49.52']);
   for (const zip of ['00000', '011000', '110', '110  00', '11000 extra', 'CZ-11000']) {
     equal(coordinates('CZE', zip), undefined);
   }
-  deepEqual(coordinates('DEU', '01945'), ['13.878122', '51.419711']);
+  deepEqual(coordinates('DEU', '01945'), ['13.88', '51.42']);
 });
 
 test('CZE contains unique full postcodes and finite coordinates', () => {
