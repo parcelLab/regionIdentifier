@@ -67,7 +67,8 @@ they do not independently certify the numerical points:
 Download and extract `GB.txt`, then run from the repository root:
 
 ```sh
-python3 scripts/build-gbr-geocode.py /path/to/GB.txt
+node scripts/build-gbr-geocode.js /path/to/GB.txt
+npm run geocode:compact
 npx prettier --write geocode/GBR.json
 npm test
 npm run lint

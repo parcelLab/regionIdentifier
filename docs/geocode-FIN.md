@@ -13,13 +13,13 @@
 
 The file contains 3,018 records and 3,018 unique five-digit postal-area codes. This is the complete returned 2026 polygon layer, including Åland. It is not a list of all Finnish postal codes: special recipient and PO box codes without a statistical area are not supplied. Missing codes return `undefined`.
 
-Each point is the geometric area centroid of its Polygon or MultiPolygon in the supplied WGS84 longitude/latitude plane. The shoelace formula weights exterior rings by absolute area and subtracts holes. Disconnected parts contribute by area, not vertex count. No locality or duplicate row weighting is used; duplicate postal codes cause generation to fail. The result is rounded to six decimal places and stored as strings for compatibility. This is an angular-plane centroid, not an equal-area projected, population-weighted or address-weighted centroid. It can lie outside a concave area or in water. Decimal precision does not establish positional accuracy.
+Each point is the geometric area centroid of its Polygon or MultiPolygon in the supplied WGS84 longitude/latitude plane. The shoelace formula weights exterior rings by absolute area and subtracts holes. Disconnected parts contribute by area, not vertex count. No locality or duplicate row weighting is used; duplicate postal codes cause generation to fail. The generator result uses six decimal places; the final `geocode:compact` step rounds to four significant digits and preserves coordinate strings. This is an angular-plane centroid, not an equal-area projected, population-weighted or address-weighted centroid. It can lie outside a concave area or in water. Decimal precision does not establish positional accuracy.
 
 Use these points for approximate postal-area distances only. Large rural and northern areas can put the point many kilometres from an actual address. No error bound or site-level accuracy is claimed. No missing code is replaced with another area's center.
 
 ## Reproduction and checks
 
-Save the WFS download as a local JSON file, then run `python3 update/fin.py /path/to/download.json` from the repository root. The script uses only Python's standard library. It checks the source count and year, duplicate codes, coordinate bounds, and the centroid formula with a square and a polygon with a hole.
+Save the WFS download as a local JSON file. From the repository root, run `node update/fin.js /path/to/download.json`, then `npm run geocode:compact`. The script uses only Node.js built-in modules. It checks the source count and year, duplicate codes, and coordinate bounds. Tests check the centroid formula with squares, holes, and disconnected areas.
 
 Primary-source spot checks use the same official layer's code, name and geometry: `00100` Helsinki center (urban), `98900` Salla center (rural), `99980` Utsjoki center (northern edge), `22100` Mariehamn (Åland), and `21660` Nauvo center (archipelago MultiPolygon). Tests pin the derived coordinates for these areas. These checks confirm area identity and the selected geometry, not independent ground accuracy.
 
