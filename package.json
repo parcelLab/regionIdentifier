@@ -22,6 +22,7 @@
     "test": "node --test",
     "lint": "eslint .",
     "validate:data": "node scripts/validate-data.js",
+    "geocode:compact": "node scripts/compact-geocode.js",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
