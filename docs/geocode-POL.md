@@ -27,17 +27,17 @@ It is an approximate representative point, not a postal boundary centroid,
 address, parcel position, or population-weighted point. Six decimal places are
 storage precision, not measured accuracy.
 
-Reproduce with Python 3 (no extra packages):
+Reproduce with Node.js:
 
 ```sh
 curl -fsS https://download.geonames.org/export/zip/PL.zip -o /tmp/PL.zip
 unzip -p /tmp/PL.zip PL.txt > /tmp/PL.txt
-python3 scripts/generate-geocode-POL.py /tmp/PL.txt
+node scripts/generate-geocode-pol.js /tmp/PL.txt
+npm run geocode:compact
 ```
 
 The script checks source shape, country, code format, finite coordinate ranges,
-and duplicate-independent aggregation. Do not run Python with `-O`, which disables
-assertions. The export URL changes over time; compare hashes before reproduction.
+and duplicate-independent aggregation. The export URL changes over time; compare hashes before reproduction.
 
 ## Input and checks
 

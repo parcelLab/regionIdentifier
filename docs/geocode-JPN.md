@@ -27,8 +27,8 @@ Download and extract the source, then run from the repository root:
 ```sh
 curl -fSL https://download.geonames.org/export/zip/JP.zip -o /tmp/JP.zip
 unzip -p /tmp/JP.zip JP.txt > /tmp/JP.txt
-python3 scripts/build-jpn-geocode.py /tmp/JP.txt
-npx prettier --write geocode/JPN.json
+node scripts/build-jpn-geocode.js /tmp/JP.txt
+npm run geocode:compact
 npm test
 npm run lint
 npm run format:check

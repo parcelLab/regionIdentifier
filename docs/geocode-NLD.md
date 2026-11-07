@@ -14,13 +14,14 @@ The source has 4,334 rows and 4,086 distinct four-digit prefixes. The generated 
 
 For each prefix, collect distinct numeric (latitude, longitude) pairs. Sort them and take their unweighted arithmetic mean, rounded to six decimal places. Repeated identical rows do not change the result. At this geographic scale, the mean is a deterministic representative point. It is not a postal-area, address-weighted, or population-weighted centroid. The six decimal places are output formatting, not an accuracy claim. GeoNames describes estimated positions and gives no completeness or accuracy warranty.
 
-Rebuild with Python 3 and the extracted source file:
+Rebuild with Node.js and the extracted source file:
 
 ```sh
-python3 scripts/generate-nld-geocode.py /path/to/NL.txt
+node scripts/generate-nld-geocode.js /path/to/NL.txt
+npm run geocode:compact
 ```
 
-The generator asserts country, field count, prefix format, finite coordinate ranges, and unique output prefixes. It writes only `geocode/NLD.json`. Run without Python's `-O` option so assertions are active.
+The generator asserts country, field count, prefix format, finite coordinate ranges, and unique output prefixes. It writes only `geocode/NLD.json`.
 
 ## Lookup behavior
 

@@ -14,7 +14,7 @@ The previous file contained 16,485 rows for 8,311 unique codes. This refresh add
 
 For each postal code, remove duplicate numeric coordinate pairs, sort the pairs, and take the unweighted arithmetic mean of each coordinate. Round to six decimal places and retain strings. This avoids weighting a point by repeated source rows and removes the previous dependence on the first locality. These points are neither polygon centroids nor address-weighted centers. Six decimal places do not imply measured accuracy.
 
-The generator validates country, five-digit codes, finite coordinates and a German bounding box. Rebuild with `unzip -p DE.zip DE.txt > /tmp/DE.txt`, then `python3 scripts/generate-deu-geocode.py /tmp/DE.txt`. The generator includes assertions for duplicate invariance, row-order invariance, leading zeros and invalid input.
+The generator validates country, five-digit codes, finite coordinates and a German bounding box. Rebuild with `unzip -p DE.zip DE.txt > /tmp/DE.txt`, then `node scripts/generate-deu-geocode.js /tmp/DE.txt`. Then run `npm run geocode:compact`. Tests cover duplicate invariance, row-order invariance, leading zeros and invalid input.
 
 The existing lookup still returns `[longitude, latitude]` strings or `undefined`. It retains leading zeros and accepts a postal code followed by a space and locality. It does not reconstruct missing zeros or accept an internal space. No runtime, exports, types or other country data change.
 

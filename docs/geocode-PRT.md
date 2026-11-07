@@ -16,11 +16,11 @@ Each key retains all seven digits in `NNNN-NNN` form. For each code, remove dupl
 Regenerate from the extracted source with:
 
 ```sh
-python3 scripts/generate-prt-geocode.py /path/to/PT.txt
-npx prettier --write geocode/PRT.json
+node scripts/generate-prt-geocode.js /path/to/PT.txt
+npm run geocode:compact
 ```
 
-The converter checks country, postal format, finite coordinates, and global ranges. Its assertion checks duplicate removal and averaging. Offline tests check all output points against broad Portugal bounds, unique keys, count, and actual lookup results.
+The converter checks country, postal format, finite coordinates, and global ranges. Tests cover duplicate removal and averaging. Offline tests check all output points against broad Portugal bounds, unique keys, count, and actual lookup results.
 
 ## Lookup behavior and spot checks
 

@@ -13,16 +13,16 @@ The source has 2,781 locality rows and 1,146 distinct four-digit postal codes. T
 
 For each postal code, remove duplicate latitude/longitude pairs, then take the unweighted arithmetic mean of the distinct pairs. Sort pairs before summing for deterministic output. Round to six decimal places and store strings to preserve the existing return type. 516 codes have more than one distinct source point. This is a representative locality point, not a postal-area or population centroid. Duplicate source rows cannot add weight. No coordinates are invented for missing codes.
 
-Rebuild with Python 3 (standard library only):
+Rebuild with Node.js:
 
 ```sh
 curl -fsS https://download.geonames.org/export/zip/BE.zip -o /tmp/BE.zip
 unzip -o /tmp/BE.zip -d /tmp/BE
-python3 scripts/generate-BEL.py /tmp/BE/BE.txt
-npx prettier --write geocode/BEL.json
+node scripts/generate-bel.js /tmp/BE/BE.txt
+npm run geocode:compact
 ```
 
-The generator checks the country, four-digit code format, finite coordinate ranges, and duplicate/order invariance with assertions. Run without Python's `-O` option.
+The generator checks the country, four-digit code format, and finite coordinate ranges. Tests verify that duplicates and input order do not change the average.
 
 ## Behavior and accuracy
 

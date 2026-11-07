@@ -35,8 +35,8 @@ The [UPU Romania addressing sheet](https://www.upu.int/UPU/media/upu/PostalEntit
 ```sh
 curl --fail --location https://download.geonames.org/export/zip/RO.zip -o /tmp/RO.zip
 unzip -p /tmp/RO.zip RO.txt > /tmp/RO.txt
-python3 scripts/generate-geocode-ROU.py /tmp/RO.txt
-npx prettier --write geocode/ROU.json
+node scripts/generate-geocode-rou.js /tmp/RO.txt
+npm run geocode:compact
 npm test
 npm run lint
 npm run format:check

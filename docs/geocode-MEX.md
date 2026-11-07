@@ -19,12 +19,12 @@ For each code, collect distinct numeric `(latitude, longitude)` pairs. Sort them
 
 These are representative points, **not postal-area centroids**. GeoNames describes algorithmic place-name matching and estimates from neighboring codes. The source accuracy field has 79,434 rows marked `4`, 45,232 marked `3`, and 19,989 marked `1`; the current readme does not define `3`. No accuracy radius is available. Six decimal places describe storage rounding, not measurement precision. Means can lie outside the served settlements. Rural codes can cover large areas, and source errors can produce large distance errors.
 
-The generator rejects malformed rows, non-five-digit codes, non-finite numbers and out-of-range WGS84 values. It has assert-based checks for aggregation, duplicate neutrality, order independence, the exclusion, and invalid source values. Run without Python optimization:
+The generator rejects malformed rows, non-five-digit codes, non-finite numbers and out-of-range WGS84 values. Tests cover duplicate weighting, input order, and invalid coordinates. Rebuild with Node.js:
 
 ```sh
 unzip -p MX.zip MX.txt > /tmp/MX.txt
-python3 scripts/generate-mex-geocode.py /tmp/MX.txt
-npx prettier --write geocode/MEX.json
+node scripts/generate-mex-geocode.js /tmp/MX.txt
+npm run geocode:compact
 ```
 
 ## Sample checks and known error

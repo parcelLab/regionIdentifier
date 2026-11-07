@@ -69,7 +69,6 @@ Download and extract `GB.txt`, then run from the repository root:
 ```sh
 node scripts/build-gbr-geocode.js /path/to/GB.txt
 npm run geocode:compact
-npx prettier --write geocode/GBR.json
 npm test
 npm run lint
 npm run format:check
@@ -77,8 +76,8 @@ npm run validate:data
 ```
 
 The generator checks country, row shape, district format, finite coordinates,
-and coordinate ranges. Its assertions check duplicate weighting, input-order
-independence, and invalid-input rejection. Run Python without `-O`.
+and coordinate ranges. Tests check duplicate weighting, input-order
+independence, and invalid-input rejection.
 Offline tests execute the actual lookup for every district, check unique codes
 and coordinate types/ranges, and cover input formats, misses, urban, rural,
 Northern Ireland, and island cases. They do not establish a measured error bound.

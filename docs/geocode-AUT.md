@@ -10,7 +10,7 @@
 
 ## Method and compatibility
 
-Run `python3 scripts/generate-aut-geocode.py AT.txt geocode/AUT.json` after extracting the archive. The script validates each row, postal-code format, finite coordinates and coordinate ranges. Its self-check verifies duplicate removal and preservation of a synthetic leading zero.
+Run `node scripts/generate-aut-geocode.js AT.txt geocode/AUT.json` after extracting the archive. Then run `npm run geocode:compact`. The script validates each row, postal-code format, finite coordinates and coordinate ranges. Tests verify duplicate removal and preservation of a synthetic leading zero.
 
 For each postal code, remove duplicate latitude/longitude pairs, then calculate the arithmetic mean of each coordinate. Each distinct point has equal weight. Sort codes and round to four decimal places. This deterministic representative point is not a postal-area centroid, a population-weighted center or a delivery address. Duplicate source rows do not add weight. A mean can fall between settlements.
 

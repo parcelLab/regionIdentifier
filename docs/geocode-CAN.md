@@ -16,7 +16,7 @@ The source has 1,657 rows and 1,653 distinct postal strings. The output has **1,
 - `L9X` has four distinct points; its result is latitude 44.443175, longitude -79.77035. `C0A` has two rows with the same point, so its coordinates stay unchanged.
 - Preserve `[longitude, latitude]` string results. Coordinates use WGS84. Decimal places do not establish positional accuracy. Validate finite values, geographic ranges, code syntax and output uniqueness during generation and offline lookup tests.
 
-To regenerate, extract the pinned archive, run `python3 scripts/generate-can.py /path/to/CA.txt`, then run `npx prettier --write geocode/CAN.json`. The script checks source counts and exclusions and has an assert-based duplicate-weighting self-check. Review a later source release before changing its assertions.
+To regenerate, extract the pinned archive, run `node scripts/generate-can.js /path/to/CA.txt`, then run `npm run geocode:compact`. The script checks source counts and exclusions. Tests verify that duplicates do not add weight. Review a later source release before changing its assertions.
 
 Compared with the legacy file, this refresh removes unsupported `L0V`, removes the H0H point, adds source FSAs, updates changed source coordinates, and replaces duplicate rows with one representative point. It does not change region identification.
 

@@ -34,7 +34,8 @@ These checks agree with GeoNames locality names and plausible coordinate locatio
 Extract `ES.txt` from the linked archive, then run:
 
 ```sh
-python3 scripts/generate-esp-geocode.py /path/to/ES.txt
+node scripts/generate-esp-geocode.js /path/to/ES.txt
+npm run geocode:compact
 ```
 
-The generator validates every source row and has an assert-based duplicate-weighting check. Do not run Python with assertions disabled. Run the repository tests, lint, format check, and data validator after regeneration.
+The generator validates every source row. Tests verify that duplicates do not add weight. Run the repository tests, lint, format check, and data validator after regeneration.

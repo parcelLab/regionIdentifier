@@ -1,5 +1,14 @@
 const { deepEqual, equal, throws } = require('node:assert/strict');
 const { it } = require('node:test');
+const medoid = require('../scripts/generate-che');
+const buildFra = require('../scripts/generate-fra-geocode');
+const {
+  geoNamesEntries,
+  groupPoints,
+  meanRows,
+  parseDelimited,
+  parseTsv,
+} = require('../scripts/geocode-source');
 const buildGbr = require('../scripts/build-gbr-geocode');
 const { build: buildFin, center } = require('../update/fin');
 
@@ -112,4 +121,59 @@ it('FIN generation validates the layer, year, postal codes, geometry, and coordi
     mutate(invalid);
     throws(() => buildFin(invalid));
   }
+});
+
+it('GeoNames generators preserve leading zeros, distinct point weights, and halfway rounding', () => {
+  const text = 'PT\t0000-001\tLocality\t\t\t\t\t\t\t40.03125\t-8.09375\t\r\n';
+  const rows = parseTsv(text + text);
+  const entries = geoNamesEntries(rows, 'PT', /^\d{4}-\d{3}$/);
+  const groups = groupPoints([...entries, ['0000-001', [40, -8]]]);
+  deepEqual(meanRows(groups, 4), [{ zip: '0000-001', latitude: '40.0156', longitude: '-8.0469' }]);
+  deepEqual(meanRows(groupPoints(entries), 4), [
+    { zip: '0000-001', latitude: '40.0312', longitude: '-8.0938' },
+  ]);
+  for (const coordinate of ['', 'NaN', '91', '0x10']) {
+    throws(() =>
+      geoNamesEntries(parseTsv(text.replace('40.03125', () => coordinate)), 'PT', /^\d{4}-\d{3}$/),
+    );
+  }
+});
+
+it('Delimited sources handle quoted delimiters, escaped quotes, newlines and empty final fields', () => {
+  deepEqual(parseDelimited('code;place;\r\n0123;"a;""b""\r\nc";', ';'), [
+    ['code', 'place', ''],
+    ['0123', 'a;"b"\r\nc', ''],
+  ]);
+  throws(() => parseDelimited('0123;"unterminated', ';'));
+});
+
+it('Swiss selection uses a source medoid and longitude order for ties', () => {
+  deepEqual(
+    medoid([
+      [47, 9],
+      [47, 8],
+    ]),
+    [47, 8],
+  );
+  deepEqual(
+    medoid([
+      [47, 7],
+      [47, 9],
+      [47, 8],
+    ]),
+    [47, 8],
+  );
+});
+
+it('French generation weights communes and checks their coordinates', () => {
+  const first = ['01001', '01400', '46', '4'];
+  const second = ['01002', '01400', '48', '6'];
+  deepEqual(
+    buildFra([first, first, second, ['98001', '99999', '0', '0'], ['01003', '01401', '', '']]),
+    {
+      result: [{ zip: '01400', latitude: '47.000000', longitude: '5.000000' }],
+      missing: ['01401'],
+    },
+  );
+  throws(() => buildFra([first, ['01001', '01400', '47', '4']]));
 });

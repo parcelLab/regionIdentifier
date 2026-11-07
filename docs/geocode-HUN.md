@@ -34,8 +34,8 @@ These sources verify postal/locality associations. The coordinates are GeoNames 
 Download and extract `HU.txt` from the source archive, then run:
 
 ```sh
-python3 scripts/generate-hun.py /path/to/HU.txt geocode/HUN.json
-npx prettier --write geocode/HUN.json
+node scripts/generate-hun.js /path/to/HU.txt geocode/HUN.json
+npm run geocode:compact
 ```
 
-The generator uses only the Python standard library. Its assertions check duplicate-insensitive averaging, source schema, country, code format, and finite coordinates within a Hungary bounding box. Run without Python's `-O` option so assertions remain active.
+The generator validates source schema, country, code format, and finite coordinates within a Hungary bounding box. Tests verify that duplicates do not add weight.

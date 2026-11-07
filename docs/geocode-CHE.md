@@ -22,10 +22,10 @@ This is a representative locality point, not a postal-area centroid, building co
 Extract `AMTOVZ_CSV_WGS84/AMTOVZ_CSV_WGS84.csv` from the archive, then run:
 
 ```sh
-python3 scripts/generate-che.py /path/to/AMTOVZ_CSV_WGS84.csv
-npx prettier --write geocode/CHE.json
+node scripts/generate-che.js /path/to/AMTOVZ_CSV_WGS84.csv
+npm run geocode:compact
 ```
 
-The generator validates codes and coordinate ranges and checks duplicate-independent selection with assertions. Country tests execute actual lookups for all output codes and verify unique codes, coordinate ranges and misses. Primary-source CSV rows verify Zürich 8001 (urban), Wengen/Kleine Scheidegg/Eigergletscher 3823 (rural Alpine), Samnaun Dorf 7563 (border), and La Chaux-de-Fonds/La Cibourg 2300 (shared code). For 3823, the selected source point is Kleine Scheidegg; it must not be described as Wengen's position.
+The generator validates codes and coordinate ranges. Tests verify medoid selection and tie-breaking. Country tests execute actual lookups for all output codes and verify unique codes, coordinate ranges and misses. Primary-source CSV rows verify Zürich 8001 (urban), Wengen/Kleine Scheidegg/Eigergletscher 3823 (rural Alpine), Samnaun Dorf 7563 (border), and La Chaux-de-Fonds/La Cibourg 2300 (shared code). For 3823, the selected source point is Kleine Scheidegg; it must not be described as Wengen's position.
 
 Runtime adds CHE to the existing geocode allowlist. Results retain `[longitude, latitude]` strings. Existing space-suffix handling is unchanged (`8001 Zürich` resolves); no country-prefix or leading-zero padding is added. Swiss codes have four digits. Unknown and out-of-scope codes return `undefined`. No public exports or types change.

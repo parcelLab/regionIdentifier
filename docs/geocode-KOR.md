@@ -29,7 +29,7 @@ These checks confirm postal/locality associations and broad location plausibilit
 
 `lib/geocode.js` accepts KOR through the existing country resolution and returns `[longitude, latitude]` as strings. Five-digit compact codes work. Existing space suffix handling is retained (`04524 Seoul` resolves as `04524`). Internal spaces and obsolete six-digit/hyphenated codes are not converted. Unknown codes return `undefined`. Other countries and public exports are unchanged.
 
-Run `python3 scripts/generate-kor-geocode.py /path/to/KR.zip`, then `npx prettier --write geocode/KOR.json`. The generator validates country, code format and finite coordinate ranges before writing. Its assertions check duplicate and input-order invariance; run without Python optimization.
+Run `node scripts/generate-kor-geocode.js /path/to/KR.zip`, then `npm run geocode:compact`. The generator uses the `unzip` command to read `KR.txt` from the archive. It validates country, code format and finite coordinate ranges before writing. Tests verify that duplicates and input order do not change the average.
 
 Run `npm test`, `npm run lint`, `npm run format:check`, and `npm run validate:data`. Offline KOR tests check real lookups, representative urban/rural/island cases, leading zeros, misses, uniqueness and coordinate ranges.
 

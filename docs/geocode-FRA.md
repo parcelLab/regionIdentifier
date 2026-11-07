@@ -15,7 +15,7 @@ The input has 39,192 rows. The output has 6,187 records and 6,187 unique five-di
 
 For each postal code, group rows by commune INSEE code. Count each commune once, so repeated locality rows cannot change its weight. Take the arithmetic mean of the commune latitudes and longitudes, then round to six decimal places. Assert that duplicate commune/code pairs have the same coordinates. The source identifies these coordinates as commune centroids. The derived mean is a representative point, **not a postal-area centroid**. It is not weighted by population, area or address count. Six decimal places describe storage precision, not positional accuracy.
 
-Run `python3 scripts/generate-fra-geocode.py /path/to/base-officielle-codes-postaux.csv`, then format the JSON with Prettier. The script includes a duplicate-invariance self-check and validates code format and finite coordinate ranges. No retained in-scope code lacks coordinates.
+Run `node scripts/generate-fra-geocode.js /path/to/base-officielle-codes-postaux.csv`, then run `npm run geocode:compact`. The generator validates code format and finite coordinate ranges. Tests verify that each commune is counted once. No retained in-scope code lacks coordinates.
 
 ## Compatibility and checks
 

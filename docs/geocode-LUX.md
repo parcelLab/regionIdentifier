@@ -16,14 +16,14 @@ The input contains 179,768 address rows, 179,735 distinct postal-code/coordinate
 
 For each postal code, remove repeated coordinate pairs, sort the remaining pairs, and calculate the arithmetic mean of each coordinate. This gives equal weight to each distinct address position and avoids weighting by duplicate rows or addresses at the same position. Round to six decimal places and store strings to match existing geocode results. This is a representative mean of available address positions, not an official postal-area centroid or the first locality.
 
-Rebuild with Python 3 (standard library only):
+Rebuild with Node.js:
 
 ```sh
-python3 scripts/generate-lux-geocode.py /path/to/addresses.csv
-npx prettier --write geocode/LUX.json
+node scripts/generate-lux-geocode.js /path/to/addresses.csv
+npm run geocode:compact
 ```
 
-The generator checks postal formats, finite coordinates, global coordinate ranges, and Luxembourg bounds. Its assert-based checks verify duplicate removal, order independence, and leading-zero preservation. Do not run Python with `-O`, which disables assertions.
+The generator checks postal formats, finite coordinates, global coordinate ranges, and Luxembourg bounds. Tests verify duplicate removal, order independence, and leading-zero preservation.
 
 ## Lookup behavior and checks
 
