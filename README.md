@@ -103,3 +103,9 @@ See [DATA_REQUIREMENTS.md](./DATA_REQUIREMENTS.md) for the country-data format a
 ## License
 
 This module was built using adapted information from http://download.geonames.org/, which is registered under **CC BY 3.0**, as is this module. See http://creativecommons.org/licenses/by/3.0/ for more information.
+
+## Geocode data precision and regeneration
+
+All `geocode/*.json` coordinates are stored as strings rounded to four significant digits, with trailing zeros removed. Files use compact JSON without indentation. Postal codes, row order, and `[longitude, latitude]` return types are preserved. This is four significant digits, not four decimal places; longitude rounding can move a point by several kilometres.
+
+After running any country generator, run `npm run geocode:compact`, then `npm test` and `npm run validate:data`. Country source notes describe the upstream data and aggregation before this final rounding step. Raw source fixtures and generator calculations retain their original precision.
